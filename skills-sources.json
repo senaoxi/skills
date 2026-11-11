@@ -1,0 +1,8 @@
+{
+  "sources": [
+    {
+      "repository": "backnotprop/pstack",
+      "ref": "main"
+    }
+  ]
+}

@@ -22,3 +22,4 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm fmt:check
       - run: bash -n sync.sh
+      - run: pnpm test
