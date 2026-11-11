@@ -6,7 +6,6 @@
   "scripts": {
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "skills": "skills",
     "sync": "bash sync.sh",
     "test": "node --test scripts/sync.test.mjs"
   },

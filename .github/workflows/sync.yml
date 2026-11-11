@@ -42,7 +42,7 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add skills skills-lock.json LICENSE
+          git add skills-sources.json skills skills-lock.json LICENSE
           if ! git diff --cached --quiet; then
             git commit -m "chore: sync skills [skip ci]"
             git push
