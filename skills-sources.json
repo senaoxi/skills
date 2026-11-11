@@ -1,8 +1,14 @@
 {
+  "version": 2,
   "sources": [
     {
-      "repository": "backnotprop/pstack",
-      "ref": "main"
+      "id": "source-1",
+      "source": "backnotprop/pstack",
+      "ref": "main",
+      "selection": {
+        "mode": "all",
+        "exclude": []
+      }
     }
   ]
 }

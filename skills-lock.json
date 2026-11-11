@@ -465,5 +465,1535 @@
       "computedHash": "8bf17dbddcf1f3e8ceb9579d71eb4e26b20c4c19115e0fce56395c194fa27b15",
       "installMode": "copy"
     }
+  },
+  "repository": {
+    "version": 1,
+    "sdk": "skills@1.8.1",
+    "sources": {
+      "source-1": {
+        "input": "backnotprop/pstack",
+        "binding": {
+          "type": "github",
+          "url": "https://github.com/backnotprop/pstack.git"
+        }
+      }
+    },
+    "installed": {
+      "architect": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/architect"
+        },
+        "declaredName": "architect",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/architect"
+        },
+        "installedDigest": "afbf0c26eea841e597d21c404a19569d697176366df101c5c2443bf99f65a0c8",
+        "treeHash": "afbf0c26eea841e597d21c404a19569d697176366df101c5c2443bf99f65a0c8",
+        "sdkRecordHash": "80d3080a61aab8c41b9ec64bb8ae5d791f4e6f32e1cd048cc1e1106139e7e625",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "arena": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/arena"
+        },
+        "declaredName": "arena",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/arena"
+        },
+        "installedDigest": "5921e0042e1ea9db98a2d76537c46e3d549c03a8a9503b9110c0994f619668f8",
+        "treeHash": "5921e0042e1ea9db98a2d76537c46e3d549c03a8a9503b9110c0994f619668f8",
+        "sdkRecordHash": "6e8356886bd0783f449fe7633e4fcd856823e9c2d22391c5bb2a7158a3ef3741",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "automate-me": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/automate-me"
+        },
+        "declaredName": "automate-me",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/automate-me"
+        },
+        "installedDigest": "b38160a63d0da2c6b91b7ebaf742a4d21dbbfb981e1189d4c619349723b60930",
+        "treeHash": "b38160a63d0da2c6b91b7ebaf742a4d21dbbfb981e1189d4c619349723b60930",
+        "sdkRecordHash": "e54aa4171bb0d038599989eddf40efa13f7aee0788b875498b8e3dad6363ffb8",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "benchmark-checklist": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/benchmark-checklist"
+        },
+        "declaredName": "benchmark-checklist",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/benchmark-checklist"
+        },
+        "installedDigest": "6b62dfb345be9a4c96725f05aa37281b566c0fa1c2f54c10e0ac94b53f4c5a4d",
+        "treeHash": "6b62dfb345be9a4c96725f05aa37281b566c0fa1c2f54c10e0ac94b53f4c5a4d",
+        "sdkRecordHash": "4f22049c209dae1c1d6aefcaa64c058add9e9f395fb5f13d14976ee8b7219653",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "blast-radius": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/blast-radius"
+        },
+        "declaredName": "blast-radius",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/blast-radius"
+        },
+        "installedDigest": "9c0a43449b0174569e5f99ba243fb689b82bf9c6341a920d98569c92b2af317f",
+        "treeHash": "9c0a43449b0174569e5f99ba243fb689b82bf9c6341a920d98569c92b2af317f",
+        "sdkRecordHash": "dac57ccbb6e1596c6ac10ac7424a0d0d65778fe3eaf10540747fed88eadafbc3",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "bro": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/bro"
+        },
+        "declaredName": "bro",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/bro"
+        },
+        "installedDigest": "5f6bfbecbb171fc9d8c518d3ffb1ae16005275d181412b19dab5dfd6ca54c4b2",
+        "treeHash": "5f6bfbecbb171fc9d8c518d3ffb1ae16005275d181412b19dab5dfd6ca54c4b2",
+        "sdkRecordHash": "d77fd7fc617f4f1b55c4d75a866abd89e432edf46518eee5d2cfd31003bbbcba",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "correct": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/correct"
+        },
+        "declaredName": "correct",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/correct"
+        },
+        "installedDigest": "29d79815ac7c26b3e75f95e80b0cb904dc274432a50627a55718fb31682653d1",
+        "treeHash": "29d79815ac7c26b3e75f95e80b0cb904dc274432a50627a55718fb31682653d1",
+        "sdkRecordHash": "3c2082d17c68bb3923695b650395c8c2aac3fa9884180cd419cac2c30c39306b",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "create-formal-verification-skill": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/create-formal-verification-skill"
+        },
+        "declaredName": "create-formal-verification-skill",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/create-formal-verification-skill"
+        },
+        "installedDigest": "dfe418d59ebeb25b7c81dab2938c4a6400a7a499fea49099a736500e68e4d440",
+        "treeHash": "dfe418d59ebeb25b7c81dab2938c4a6400a7a499fea49099a736500e68e4d440",
+        "sdkRecordHash": "049065548fb5386f79cb62d41e2c90a0062dec4d7cfdc80f7e1c146eb2c06f1d",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "create-verification-skill": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/create-verification-skill"
+        },
+        "declaredName": "create-verification-skill",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/create-verification-skill"
+        },
+        "installedDigest": "07aacb464ac04d97dc1045596378a5cdc474de2c58dc0f28d24d5b3610beede9",
+        "treeHash": "07aacb464ac04d97dc1045596378a5cdc474de2c58dc0f28d24d5b3610beede9",
+        "sdkRecordHash": "d8732cee4b700985fa781539cb56cd9eede13c061e51a46bc401b9139f7fa451",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "figure-it-out": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/figure-it-out"
+        },
+        "declaredName": "figure-it-out",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/figure-it-out"
+        },
+        "installedDigest": "8344ae1081b2ce3c8b847db1267ad1692c38017f66cd1e768740b7e9df96b0f5",
+        "treeHash": "8344ae1081b2ce3c8b847db1267ad1692c38017f66cd1e768740b7e9df96b0f5",
+        "sdkRecordHash": "6baec19e82d226b63daa2491c25c44056c659cb6c7ffed706d06f802d4ec9a6f",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "how": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/how"
+        },
+        "declaredName": "how",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/how"
+        },
+        "installedDigest": "f72155883e7515dd98ea1c791a3a97dafc473d9792f416394d42da4a25b5f72a",
+        "treeHash": "f72155883e7515dd98ea1c791a3a97dafc473d9792f416394d42da4a25b5f72a",
+        "sdkRecordHash": "b3821f9fb4e3495acc4534d2ddf87557e3950251ac2a3f0a049c438fba46d61b",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "in-your-own-words": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/in-your-own-words"
+        },
+        "declaredName": "in-your-own-words",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/in-your-own-words"
+        },
+        "installedDigest": "a5f0a5245081ea9b82c93343e834537a90c6ee46b06cff929ae3b7f73d586acf",
+        "treeHash": "a5f0a5245081ea9b82c93343e834537a90c6ee46b06cff929ae3b7f73d586acf",
+        "sdkRecordHash": "9aa691f8a597cbeeeb1ade5cbbf7a83a4a37190e8bdd0a82942f32912b423837",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "interrogate": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/interrogate"
+        },
+        "declaredName": "interrogate",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/interrogate"
+        },
+        "installedDigest": "6ae9aa398268b8a93e206fe60fa74fb9486bd0150763e6762205ef4243120baa",
+        "treeHash": "6ae9aa398268b8a93e206fe60fa74fb9486bd0150763e6762205ef4243120baa",
+        "sdkRecordHash": "44a709b0cddf59ed9077f54e2c98a5503eb3805e0cd928135a159b725cbde46a",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "ketchup": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/ketchup"
+        },
+        "declaredName": "ketchup",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/ketchup"
+        },
+        "installedDigest": "17b384ff5e7b93a3be74378a7f1d5541d951bd431d77f65a7bd07701b1eda212",
+        "treeHash": "17b384ff5e7b93a3be74378a7f1d5541d951bd431d77f65a7bd07701b1eda212",
+        "sdkRecordHash": "4bac7afe127be14cd1f2ba398fc6c9418bd43194685e034be8813d016c11b1bd",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "ketchup-video": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/ketchup-video"
+        },
+        "declaredName": "ketchup-video",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/ketchup-video"
+        },
+        "installedDigest": "31910b3f5a7e72da3fab9e79565b1f8a4080626ed5ab4972c1015630a538cfa0",
+        "treeHash": "31910b3f5a7e72da3fab9e79565b1f8a4080626ed5ab4972c1015630a538cfa0",
+        "sdkRecordHash": "7828af00a921f7fe7e82c0bb2b75bdf2fdfe50dd71cd2ab5cb430793146146da",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "maintain-formal-verification-skill": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/maintain-formal-verification-skill"
+        },
+        "declaredName": "maintain-formal-verification-skill",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/maintain-formal-verification-skill"
+        },
+        "installedDigest": "63450e2513f2ac2105d855f00548c0e1aaa3c69f9f95b10301740a6fdb9649ce",
+        "treeHash": "63450e2513f2ac2105d855f00548c0e1aaa3c69f9f95b10301740a6fdb9649ce",
+        "sdkRecordHash": "2c46950fd9f5f1d9785df2b70b845bb7cd8530949f508010cd7c18a5b32b78b5",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "maintain-verification-skill": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/maintain-verification-skill"
+        },
+        "declaredName": "maintain-verification-skill",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/maintain-verification-skill"
+        },
+        "installedDigest": "d46d9fa4c9ca2c0e8924e48852e1985f08f3a0007e952595ead65516334ece23",
+        "treeHash": "d46d9fa4c9ca2c0e8924e48852e1985f08f3a0007e952595ead65516334ece23",
+        "sdkRecordHash": "4c99d1b25cd06db844de73a152273fd09efb8afe9f221b702f156f000f950e57",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "make-bot-ui": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/make-bot-ui"
+        },
+        "declaredName": "make-bot-ui",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/make-bot-ui"
+        },
+        "installedDigest": "eb9c134953fd7952edcda7de04e270ad91c8c274e769aa69dbae4569f2c90027",
+        "treeHash": "eb9c134953fd7952edcda7de04e270ad91c8c274e769aa69dbae4569f2c90027",
+        "sdkRecordHash": "75969046f42f11b1d537f6962920caf30a92e5468ab90cb9a067c632e7455261",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "no-comments": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/no-comments"
+        },
+        "declaredName": "no-comments",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/no-comments"
+        },
+        "installedDigest": "aaf1ab48509c6a63198e0b39f59438c99395e48f4c60a6b55b8621630945877d",
+        "treeHash": "aaf1ab48509c6a63198e0b39f59438c99395e48f4c60a6b55b8621630945877d",
+        "sdkRecordHash": "12eff9a61cee0166a8e06185e9c81cd7088a4faa787cb115c729c6855b1fee7b",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "poteto-help": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/poteto-help"
+        },
+        "declaredName": "poteto-help",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/poteto-help"
+        },
+        "installedDigest": "f32ccfd5f87039b86ef8160d8c1d4350114fc44b49ceb2b0288aea46c0c9d80d",
+        "treeHash": "f32ccfd5f87039b86ef8160d8c1d4350114fc44b49ceb2b0288aea46c0c9d80d",
+        "sdkRecordHash": "84c30d6fb868c13c5965046bb8e252dbf924e1d1686aadd00c3dd440c4a3c695",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "poteto-mode": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/poteto-mode"
+        },
+        "declaredName": "poteto-mode",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/poteto-mode"
+        },
+        "installedDigest": "befc5348b61b82e9c4fc111a587a51f03af7aac8917c848e30777e58a8f19012",
+        "treeHash": "befc5348b61b82e9c4fc111a587a51f03af7aac8917c848e30777e58a8f19012",
+        "sdkRecordHash": "d2bba1b1766b3cb51aa346aee17b6c35404c03292ef9899fb0c164e19f12e082",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-attack-the-premise": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-attack-the-premise"
+        },
+        "declaredName": "principle-attack-the-premise",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-attack-the-premise"
+        },
+        "installedDigest": "718f8a759a18519d745db6bcd0d26a26f243ff0488bc65a5dbe52e29e1e8e037",
+        "treeHash": "718f8a759a18519d745db6bcd0d26a26f243ff0488bc65a5dbe52e29e1e8e037",
+        "sdkRecordHash": "55744ec210151cc57c75543e070a275e0ef6f71130f31150345332a4114881ad",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-boundary-discipline": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-boundary-discipline"
+        },
+        "declaredName": "principle-boundary-discipline",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-boundary-discipline"
+        },
+        "installedDigest": "f8119a51c2511b572c8a910e98e8b60f408fec7a39d44364d71f2128ef98264e",
+        "treeHash": "f8119a51c2511b572c8a910e98e8b60f408fec7a39d44364d71f2128ef98264e",
+        "sdkRecordHash": "6cdb703e8e2a69b36dd3cfa3ad4a1a32de1997b2573ac81db1cd2ba3b64da78a",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-build-the-lever": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-build-the-lever"
+        },
+        "declaredName": "principle-build-the-lever",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-build-the-lever"
+        },
+        "installedDigest": "43e7169d20a1db39c57243ab1008481df9bf588b5074ae02b3b030bf93c93912",
+        "treeHash": "43e7169d20a1db39c57243ab1008481df9bf588b5074ae02b3b030bf93c93912",
+        "sdkRecordHash": "8348b7127e0466c4880a1776c1ba3a4607c233eb8cd96fcc29b3e6fab79643f9",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-encode-lessons-in-structure": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-encode-lessons-in-structure"
+        },
+        "declaredName": "principle-encode-lessons-in-structure",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-encode-lessons-in-structure"
+        },
+        "installedDigest": "8efbea4019ea48d8c1201185dcdcbdeb56a2a5fe93946f837d51dd5c7426eddd",
+        "treeHash": "8efbea4019ea48d8c1201185dcdcbdeb56a2a5fe93946f837d51dd5c7426eddd",
+        "sdkRecordHash": "5303a965f2fec66fa7c8a68b056c9ba769c59d2f162276ab359fac255ae50b25",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-exhaust-the-design-space": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-exhaust-the-design-space"
+        },
+        "declaredName": "principle-exhaust-the-design-space",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-exhaust-the-design-space"
+        },
+        "installedDigest": "d01a7b3ad855dd4a12b4238d402cfadb51e07eaf740e306664a537a2231d65bb",
+        "treeHash": "d01a7b3ad855dd4a12b4238d402cfadb51e07eaf740e306664a537a2231d65bb",
+        "sdkRecordHash": "7064eb01f49040ff0679ff35d6a282c381feb009719586d9b9e23a64f76433a1",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-experience-first": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-experience-first"
+        },
+        "declaredName": "principle-experience-first",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-experience-first"
+        },
+        "installedDigest": "bd609689524a1d9784a153ae323b210939b9459595523ea9de238b30b233ea74",
+        "treeHash": "bd609689524a1d9784a153ae323b210939b9459595523ea9de238b30b233ea74",
+        "sdkRecordHash": "ee92226e2715ff893d42d9a4f84ae296c87ed8e092ca2fa652c5532dbc09e135",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-explain-the-number": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-explain-the-number"
+        },
+        "declaredName": "principle-explain-the-number",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-explain-the-number"
+        },
+        "installedDigest": "2abdcc30a6f5a62eb55a260a08c953d640ec8af3515ab49adf5e4ef08084a0d5",
+        "treeHash": "2abdcc30a6f5a62eb55a260a08c953d640ec8af3515ab49adf5e4ef08084a0d5",
+        "sdkRecordHash": "ac2fff3569ca4fd3eea74a2f4a0d76447973e52aab21cebeafd3246198a9f5cf",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-fix-root-causes": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-fix-root-causes"
+        },
+        "declaredName": "principle-fix-root-causes",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-fix-root-causes"
+        },
+        "installedDigest": "87b93204fef4c0af39949bb6dd4f72fe3d3ac450d7fd79f1b49bb34d7a79c21b",
+        "treeHash": "87b93204fef4c0af39949bb6dd4f72fe3d3ac450d7fd79f1b49bb34d7a79c21b",
+        "sdkRecordHash": "4f289ed20913da3137fc836b1fba5fdaa6e4032ca9b3e0f7002490633164b15a",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-foundational-thinking": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-foundational-thinking"
+        },
+        "declaredName": "principle-foundational-thinking",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-foundational-thinking"
+        },
+        "installedDigest": "daa73c510b7792a5f1d6fe196ba983229e7a161c55b737e193924e191c9e1aaf",
+        "treeHash": "daa73c510b7792a5f1d6fe196ba983229e7a161c55b737e193924e191c9e1aaf",
+        "sdkRecordHash": "b8248aa7a499863c753d440b065aef1b83f4c9cb7323158c0ab560deeac4857a",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-guard-the-context-window": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-guard-the-context-window"
+        },
+        "declaredName": "principle-guard-the-context-window",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-guard-the-context-window"
+        },
+        "installedDigest": "5afaa3d7f866154550e12578b6ecfc0b6858b20a668532c2b682a845715a4b4e",
+        "treeHash": "5afaa3d7f866154550e12578b6ecfc0b6858b20a668532c2b682a845715a4b4e",
+        "sdkRecordHash": "b5bc5ca0241305892a50a10c6c40cf04cfb3fb35faa38d19a3410f7191672953",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-laziness-protocol": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-laziness-protocol"
+        },
+        "declaredName": "principle-laziness-protocol",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-laziness-protocol"
+        },
+        "installedDigest": "d505ec8c4801513583f1171b30871d69032ff0b9911dca99ae3131f79b63d458",
+        "treeHash": "d505ec8c4801513583f1171b30871d69032ff0b9911dca99ae3131f79b63d458",
+        "sdkRecordHash": "72226372aa0b8c456fbe6365d56cda88d318bca570d8e6420d0e1dcc69d767bc",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-make-operations-idempotent": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-make-operations-idempotent"
+        },
+        "declaredName": "principle-make-operations-idempotent",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-make-operations-idempotent"
+        },
+        "installedDigest": "cc3d8a609dd5bfc236a81011ecdc35ba59a279ddb76d115a8aff1172f1b526f2",
+        "treeHash": "cc3d8a609dd5bfc236a81011ecdc35ba59a279ddb76d115a8aff1172f1b526f2",
+        "sdkRecordHash": "bd772f64a09724fa12e28dce96e04ad6cf96e2e87d4c557e79f379537bbeab97",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-migrate-callers-then-delete-legacy-apis": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-migrate-callers-then-delete-legacy-apis"
+        },
+        "declaredName": "principle-migrate-callers-then-delete-legacy-apis",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-migrate-callers-then-delete-legacy-apis"
+        },
+        "installedDigest": "4d023b77131d3ca29c34c087276c52248cf9b4ef9af68289545e94cfa85db8b9",
+        "treeHash": "4d023b77131d3ca29c34c087276c52248cf9b4ef9af68289545e94cfa85db8b9",
+        "sdkRecordHash": "5d9253ed9895c4782cf90e2293cb44b8b2ee22a24af4315442f2d6a696a70512",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-minimize-reader-load": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-minimize-reader-load"
+        },
+        "declaredName": "principle-minimize-reader-load",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-minimize-reader-load"
+        },
+        "installedDigest": "59352d1d3a0b64289fcbd41b3c64ff0069666967e111e0cfa117356db26ef471",
+        "treeHash": "59352d1d3a0b64289fcbd41b3c64ff0069666967e111e0cfa117356db26ef471",
+        "sdkRecordHash": "572ee65e3999c9a05bf89dab9682bc26999b1d7b9aa22896d3466847d41a5880",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-model-the-domain": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-model-the-domain"
+        },
+        "declaredName": "principle-model-the-domain",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-model-the-domain"
+        },
+        "installedDigest": "cfab87cd7148becbd656455c6f68a87960b673f115bc67f3a1c40d95aa3100ca",
+        "treeHash": "cfab87cd7148becbd656455c6f68a87960b673f115bc67f3a1c40d95aa3100ca",
+        "sdkRecordHash": "aad53d6dd19c3f52b3beaaa3039a0fff3b2701c920b79415dd3beecba770e2d6",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-never-block-on-the-human": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-never-block-on-the-human"
+        },
+        "declaredName": "principle-never-block-on-the-human",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-never-block-on-the-human"
+        },
+        "installedDigest": "2a22ae79d974f2dea52f18c447437538d97509bbfa32ce1066a58a09df3a7c8c",
+        "treeHash": "2a22ae79d974f2dea52f18c447437538d97509bbfa32ce1066a58a09df3a7c8c",
+        "sdkRecordHash": "780417b2a7bd923b7bef044d307a7624b3a7cede7607e416eaef457e37cd5307",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-outcome-oriented-execution": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-outcome-oriented-execution"
+        },
+        "declaredName": "principle-outcome-oriented-execution",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-outcome-oriented-execution"
+        },
+        "installedDigest": "e8361c4bc77780168bd18eb3a1586739e35b49954a3cd72a395b5aac26306478",
+        "treeHash": "e8361c4bc77780168bd18eb3a1586739e35b49954a3cd72a395b5aac26306478",
+        "sdkRecordHash": "b9a731cefed50fc34c1dc9fabb2918689d3e8af65107b67b20e39c2cb2b498da",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-prove-it-works": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-prove-it-works"
+        },
+        "declaredName": "principle-prove-it-works",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-prove-it-works"
+        },
+        "installedDigest": "7ddca39c9a1468a3d54a0168290b1416cf8b506f9b06aee0b8c15bc66944e566",
+        "treeHash": "7ddca39c9a1468a3d54a0168290b1416cf8b506f9b06aee0b8c15bc66944e566",
+        "sdkRecordHash": "f5e857551879134c5ef1497e21dd600cd1a522d7a4833647a6a74ab3095cd732",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-redesign-from-first-principles": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-redesign-from-first-principles"
+        },
+        "declaredName": "principle-redesign-from-first-principles",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-redesign-from-first-principles"
+        },
+        "installedDigest": "119fb3384aa384b09b1e2a9cd7caa862549153fc50211398c4121259666facec",
+        "treeHash": "119fb3384aa384b09b1e2a9cd7caa862549153fc50211398c4121259666facec",
+        "sdkRecordHash": "008ad38038c93a5930b3f9e74f726b48ea71db2dc0dd29d00229334cef3d1740",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-separate-before-serializing-shared-state": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-separate-before-serializing-shared-state"
+        },
+        "declaredName": "principle-separate-before-serializing-shared-state",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-separate-before-serializing-shared-state"
+        },
+        "installedDigest": "c8c061451ba310aafa52ef6bfd7f97adb41a624ec7480399a7a30d42a10be442",
+        "treeHash": "c8c061451ba310aafa52ef6bfd7f97adb41a624ec7480399a7a30d42a10be442",
+        "sdkRecordHash": "a0a2bd3db416cca181dc65c8fe806a4502fa645d3ecc88024bd855bda7501392",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-sequence-verifiable-units": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-sequence-verifiable-units"
+        },
+        "declaredName": "principle-sequence-verifiable-units",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-sequence-verifiable-units"
+        },
+        "installedDigest": "c16df4a3a53697b5b1eb903696c0a50ac5160d8fe6f4d27652100a0d409088cb",
+        "treeHash": "c16df4a3a53697b5b1eb903696c0a50ac5160d8fe6f4d27652100a0d409088cb",
+        "sdkRecordHash": "9b95b2d183e8585cdc55dd69e1d4bafc4d2e486e3abc3b3868cfa756f0593ae6",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-subtract-before-you-add": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-subtract-before-you-add"
+        },
+        "declaredName": "principle-subtract-before-you-add",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-subtract-before-you-add"
+        },
+        "installedDigest": "c7f13c4ba5e3c2d7d10a684dde2808b36e942fe71714bed458b1ae20cca15202",
+        "treeHash": "c7f13c4ba5e3c2d7d10a684dde2808b36e942fe71714bed458b1ae20cca15202",
+        "sdkRecordHash": "98ef85714ac3b5fb6941e5306bc39d15462b80241e446fce06e178d729a8751b",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-test-behavior-not-implementation": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-test-behavior-not-implementation"
+        },
+        "declaredName": "principle-test-behavior-not-implementation",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-test-behavior-not-implementation"
+        },
+        "installedDigest": "584fd6e14ae1f5bc31c20414f5cc86906f1af5a14a55b35c7a031f968e34431a",
+        "treeHash": "584fd6e14ae1f5bc31c20414f5cc86906f1af5a14a55b35c7a031f968e34431a",
+        "sdkRecordHash": "7bc4bbd84ab6e2c5dc10b942f80aae9ed29ee8c8f36c665c981114c3f646fee6",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "principle-type-system-discipline": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/principle-type-system-discipline"
+        },
+        "declaredName": "principle-type-system-discipline",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/principle-type-system-discipline"
+        },
+        "installedDigest": "7ba3b5352c7adefb6fbab7c587f94bad9d8b553d8277c5720bc74fe762e3b888",
+        "treeHash": "7ba3b5352c7adefb6fbab7c587f94bad9d8b553d8277c5720bc74fe762e3b888",
+        "sdkRecordHash": "b77e39a5e49cebd263de37842593721e373c94beef28e5a142655c03c32e7ae8",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "recall": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/recall"
+        },
+        "declaredName": "recall",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/recall"
+        },
+        "installedDigest": "e3f099bc12b577b44637ff499baa5d927c4403d18bec5548f6f1decd88a5c950",
+        "treeHash": "e3f099bc12b577b44637ff499baa5d927c4403d18bec5548f6f1decd88a5c950",
+        "sdkRecordHash": "2670cf24974c0009e3a34b84439ad7a2d6f5b71dde2780a9a8cecf6d0c7e17ff",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "reflect": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/reflect"
+        },
+        "declaredName": "reflect",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/reflect"
+        },
+        "installedDigest": "49655cbbd3a3e323df050253897176dd2d270468de288e6ee5c2206e9fa02bd3",
+        "treeHash": "49655cbbd3a3e323df050253897176dd2d270468de288e6ee5c2206e9fa02bd3",
+        "sdkRecordHash": "ef05c5c078d60c91aba141e9e3ea15fa0bcdb56912f9f6cdf35481bdfc579595",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "setup-pstack": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/setup-pstack"
+        },
+        "declaredName": "setup-pstack",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/setup-pstack"
+        },
+        "installedDigest": "f984327c9d552c03203ffb6df8f56c56cb74d755e1250f946a50e375675e04bf",
+        "treeHash": "f984327c9d552c03203ffb6df8f56c56cb74d755e1250f946a50e375675e04bf",
+        "sdkRecordHash": "bcf271a968c044c9fab5fd8a6082eb14659c666ecd7ba6ff2ffe31af857802b8",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "sharpen": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/sharpen"
+        },
+        "declaredName": "sharpen",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/sharpen"
+        },
+        "installedDigest": "fb337863911a0eee6ae91f862487a12c9554565d9f2dd15c096a7e426c356239",
+        "treeHash": "fb337863911a0eee6ae91f862487a12c9554565d9f2dd15c096a7e426c356239",
+        "sdkRecordHash": "27565d9300e7c9eab277182d06fa89d82e1540b12557038c0953a0af8a6efea8",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "show-me-your-work": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/show-me-your-work"
+        },
+        "declaredName": "show-me-your-work",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/show-me-your-work"
+        },
+        "installedDigest": "c8092d064381eb1feba8d8047bda227e1f158aa1de1df5fd1b290c7c6f141e78",
+        "treeHash": "c8092d064381eb1feba8d8047bda227e1f158aa1de1df5fd1b290c7c6f141e78",
+        "sdkRecordHash": "98d1185d9661b849063cc26e6b91f8e26cf0e257df4485e356bdb7a5f1b87395",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "statechart": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/statechart"
+        },
+        "declaredName": "statechart",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/statechart"
+        },
+        "installedDigest": "a9cdccac2f4ca184cc2f9fa6bc3f7584b03292d04d793c72fe38ab9dd626f1d5",
+        "treeHash": "a9cdccac2f4ca184cc2f9fa6bc3f7584b03292d04d793c72fe38ab9dd626f1d5",
+        "sdkRecordHash": "f72e21bfc287ec0fb6d59e13ea3bc3ccc3729834d61b16be04ac56f75bb9c724",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "swarm": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/swarm"
+        },
+        "declaredName": "swarm",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/swarm"
+        },
+        "installedDigest": "c3fd0a44b230570dca3c61605413ee0efe9e513e9c3fd8f8416dbe17b2428574",
+        "treeHash": "c3fd0a44b230570dca3c61605413ee0efe9e513e9c3fd8f8416dbe17b2428574",
+        "sdkRecordHash": "bffdd66726af287b4d097eae38c4a78357abdd5504f465d32018484602118d64",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "tdd": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/tdd"
+        },
+        "declaredName": "tdd",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/tdd"
+        },
+        "installedDigest": "78cdecd92f520b9b44b2d9c425869c0a7a9ed32b42fb18576091c15bea098da0",
+        "treeHash": "78cdecd92f520b9b44b2d9c425869c0a7a9ed32b42fb18576091c15bea098da0",
+        "sdkRecordHash": "8c6fcf60913804c4c7018681a8ec1bf04580466dde33228c690c7cb21a9316b7",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "teach": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/teach"
+        },
+        "declaredName": "teach",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/teach"
+        },
+        "installedDigest": "d936fc63d0c67a56a72f4b59e012ba2692e452094e23e744300bd9b086f362bf",
+        "treeHash": "d936fc63d0c67a56a72f4b59e012ba2692e452094e23e744300bd9b086f362bf",
+        "sdkRecordHash": "aeecdca6092fd9328fc9df40fd9a052a6f7bc69445e778167cdf7fa0d6393952",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "technical-writing": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/technical-writing"
+        },
+        "declaredName": "technical-writing",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/technical-writing"
+        },
+        "installedDigest": "db6659bf7d4ce9270290ebae7a4ce7336bb1d403af037f08cee38fb881eb2f77",
+        "treeHash": "db6659bf7d4ce9270290ebae7a4ce7336bb1d403af037f08cee38fb881eb2f77",
+        "sdkRecordHash": "7a5dfa16334803c12a30e6ef1d27ab1e38a23193740e28abea35cdd6de7a5bdd",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "typescript-best-practices": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/typescript-best-practices"
+        },
+        "declaredName": "typescript-best-practices",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/typescript-best-practices"
+        },
+        "installedDigest": "6aa91014366d8957874e3c85d03d6d9069e7a031edc7ee4ce3f345227aef0e93",
+        "treeHash": "6aa91014366d8957874e3c85d03d6d9069e7a031edc7ee4ce3f345227aef0e93",
+        "sdkRecordHash": "aebfa3c86c6665cf0a710cf935243c7fdd6bad302845c3e35bc61ec4dbea230e",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "unslop": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/unslop"
+        },
+        "declaredName": "unslop",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/unslop"
+        },
+        "installedDigest": "b2a4345d24e4a64e37cc126a6783c3fbbc3ee251f863ae7235bef97c50ac096f",
+        "treeHash": "b2a4345d24e4a64e37cc126a6783c3fbbc3ee251f863ae7235bef97c50ac096f",
+        "sdkRecordHash": "f9dbdd4ab523f6e4da09dd9a9b2e303e58bf23ce76f290d13270cd3805785dab",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      },
+      "why": {
+        "sourceId": "source-1",
+        "origin": {
+          "kind": "path",
+          "path": "skills/why"
+        },
+        "declaredName": "why",
+        "provenance": {
+          "kind": "git",
+          "remote": "https://github.com/backnotprop/pstack.git",
+          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "ref": "main",
+          "path": "skills/why"
+        },
+        "installedDigest": "e08b1dbed41f8e3f7549d340cbb450e1dea05e91639c4090edf539159a4b54e7",
+        "treeHash": "e08b1dbed41f8e3f7549d340cbb450e1dea05e91639c4090edf539159a4b54e7",
+        "sdkRecordHash": "4cbc07497fbe77aa018fd9d0dd933d210a20a76dd1dc576161d89e4e2ec48ae8",
+        "notices": [
+          {
+            "path": "LICENSE",
+            "text": "MIT License\n\nCopyright (c) 2026 Lauren Tan\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+            "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+          }
+        ],
+        "centralizedNotices": []
+      }
+    },
+    "manifestHash": "36e1559969f4deab0850fa5fcb92165e1c7962a0ad534c71b3e3b07ea0be2ead",
+    "controlModes": {
+      "skills-sources.json": 0,
+      "skills-lock.json": 0,
+      "LICENSE": 0
+    },
+    "licenseHash": "7fed7f72720ef8089fd6e97f11cb6f6683d358c867b4ebcb4fa5afdfc35e5ab2"
   }
 }
