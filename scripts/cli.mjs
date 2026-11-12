@@ -1,23 +1,24 @@
-import { manageRepository } from "./sync.mjs";
+import { manageRepository } from "./skills.mjs";
 
 const help = `Manage this repository's external skills.
 
-  pnpm sync
-  pnpm sync add SOURCE (--skill SELECTOR)... [--ref REF]
-  pnpm sync add SOURCE --all [--ref REF]
-  pnpm sync remove NAME...
-  pnpm sync remove --source SOURCE_ID
-  pnpm sync list
-  pnpm sync list --available SOURCE [--ref REF]
-  pnpm sync help
+  pnpm skills sync
+  pnpm skills add SOURCE (--skill SELECTOR)... [--ref REF]
+  pnpm skills add SOURCE --all [--ref REF]
+  pnpm skills remove NAME...
+  pnpm skills remove --source SOURCE_ID
+  pnpm skills list
+  pnpm skills list --available SOURCE [--ref REF]
+  pnpm skills help
 
 Git sources require a concrete ref. Existing exact sources reuse their ref.
-Add rejects active origins and installed-name collisions. Use sync to refresh.
+Add rejects active origins and installed-name collisions. Use pnpm skills sync to refresh.
 Remove uses canonical installed names from list. Batches succeed together.
+No subcommand prints this help.
 `;
 class UsageError extends Error {}
 function usage(message) {
-  throw new UsageError(`${message}\nRun pnpm sync help for usage.`);
+  throw new UsageError(`${message}\nRun pnpm skills help for usage.`);
 }
 function value(args, index, flag) {
   const result = args[index + 1];
@@ -25,11 +26,15 @@ function value(args, index, flag) {
   return result;
 }
 export function parseCommand(args) {
-  if (!args.length) return { type: "sync" };
+  if (!args.length) return { type: "help" };
   const [verb, ...rest] = args;
   if (["help", "--help", "-h"].includes(verb)) {
     if (rest.length) usage("help takes no arguments");
     return { type: "help" };
+  }
+  if (verb === "sync") {
+    if (rest.length) usage("sync takes no arguments");
+    return { type: "sync" };
   }
   if (verb === "add") {
     const [source, ...flags] = rest;

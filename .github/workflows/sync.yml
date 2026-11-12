@@ -3,7 +3,7 @@ name: Sync Skills
 on:
   push:
     paths:
-      - sync.sh
+      - skills.sh
       - scripts/**
       - skills-sources.json
       - LICENSE
@@ -35,7 +35,7 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
-      - run: pnpm sync
+      - run: pnpm skills sync
       - run: pnpm fmt:check
 
       - name: Commit changes

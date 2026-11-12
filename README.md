@@ -11,7 +11,7 @@ Use Node.js 24 or later, Git, and the pnpm version pinned in `package.json`.
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm sync
+pnpm skills sync
 ```
 
 The first sync migrates the previous unversioned manifest and SDK lock. It
@@ -27,21 +27,24 @@ snapshots can remain uncommitted.
 ## Add, list, and remove skills
 
 ```sh
-pnpm sync list --available owner/repo --ref main
-pnpm sync add owner/repo --skill alpha --skill beta --ref main
-pnpm sync add https://git.example.org/team/skills.git --all --ref release
-pnpm sync add https://example.org/skill.tar.gz --skill skill-name
-pnpm sync list
-pnpm sync remove alpha beta
-pnpm sync remove --source source-1
-pnpm sync help
+pnpm skills list --available owner/repo --ref main
+pnpm skills add owner/repo --skill alpha --skill beta --ref main
+pnpm skills add https://git.example.org/team/skills.git --all --ref release
+pnpm skills add https://example.org/skill.tar.gz --skill skill-name
+pnpm skills list
+pnpm skills remove alpha beta
+pnpm skills remove --source source-1
+pnpm skills help
 ```
+
+`pnpm skills` without a subcommand prints help. Use `pnpm skills sync` to
+refresh configured selections. The previous `pnpm sync` entry has been removed.
 
 Add requires named selectors or `--all`. A batch succeeds together or fails
 together. Git sources require a concrete branch, tag, or commit, supplied by
 `--ref` or an SDK-supported locator. Literal `HEAD` is rejected. An exact
 configured source reuses its ref when omitted. A conflicting explicit ref fails.
-Change a configured ref in `skills-sources.json`, then run `pnpm sync` to refresh
+Change a configured ref in `skills-sources.json`, then run `pnpm skills sync` to refresh
 its selected skills. After any source or selection policy edit, add, remove, and
 list require this explicit sync. Formatting and source-order changes do not
 change the policy digest.
@@ -50,7 +53,7 @@ The manager installs every selected skill into a separate SDK sandbox. The
 actual destination basename determines its canonical installed name. For
 example, `Fancy Skill` can install as `fancy-skill`. A collision reports both
 owners and fails without overwriting. Re-adding an active origin also fails.
-There is no force option. Use `pnpm sync` to refresh configured selections.
+There is no force option. Use `pnpm skills sync` to refresh configured selections.
 
 Remove takes canonical names shown by list. After migration, remove uses stored
 receipts and notices without contacting remotes. Add preserves unrelated source
@@ -58,9 +61,27 @@ snapshots. Unknown names or source IDs fail without publishing changes. Empty
 source lists and empty selections are valid.
 
 The CLI returns 0 for success, 2 for invalid arguments, and 1 for conflicts or
-operational failures. `sync.sh` changes to its own repository directory before
+operational failures. `skills.sh` changes to its own repository directory before
 calling the CLI. Direct `node /path/to/scripts/cli.mjs ...` manages its current
 working directory.
+
+## Author local skills
+
+Keep original local skills in a source directory outside this repository to
+preserve its single-LICENSE layout. Each selected local package needs a
+`SKILL.md` and its complete applicable `LICENSE` file.
+
+```sh
+pnpm skills add /absolute/path/to/authored-skill --skill my-skill
+```
+
+Edit that source directory, then run `pnpm skills sync` to refresh the copy.
+The `skills/` directory is managed output. Unregistered directories and edits to
+managed copies block management rather than becoming new source skills.
+
+Local source paths must exist on every machine that runs sync. For CI or shared
+use, keep the originals in a reachable Git repository and add that Git locator
+with a concrete ref.
 
 ## Configure source selections
 
@@ -185,14 +206,14 @@ After publishing your repository, use its source locator instead.
 npx skills add owner/repo --skill '*' --yes
 ```
 
-The previous repository-local upstream installer alias has been removed.
-Use `npx skills` from the consumer project. Repository management uses `pnpm sync`.
+The `pnpm skills` script runs this repository manager. Use `npx skills`
+from the project that consumes the skills.
 
 ## Run checks and automation
 
 ```sh
 pnpm fmt:check
-bash -n sync.sh
+bash -n skills.sh
 pnpm test
 ```
 

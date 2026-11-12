@@ -1,7 +1,17 @@
 import assert from "node:assert/strict";
 import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
-import { chmod, cp, mkdir, mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import {
+  chmod,
+  cp,
+  mkdir,
+  mkdtemp,
+  readFile,
+  readdir,
+  rm,
+  symlink,
+  writeFile,
+} from "node:fs/promises";
 import { createServer } from "node:http";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
@@ -9,7 +19,7 @@ import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import test from "node:test";
 import { installSkills, listSkills, resolveSource } from "skills";
-import { collectNotices, inventory } from "./sync.mjs";
+import { collectNotices, inventory } from "./skills.mjs";
 
 const run = promisify(execFile);
 const cli = fileURLToPath(new URL("./cli.mjs", import.meta.url));
@@ -44,7 +54,7 @@ async function temporary(t) {
   t.after(() => rm(root, { recursive: true, force: true }));
   return root;
 }
-async function invoke(root, args = [], env = {}, options = {}) {
+async function invoke(root, args = ["sync"], env = {}, options = {}) {
   try {
     const result = await run(
       process.execPath,
@@ -203,11 +213,13 @@ test("CLI grammar returns usage errors and legacy-empty sync migrates without re
     ["remove"],
     ["remove", "one", "--source", "x"],
     ["list", "--all"],
-    ["sync"],
+    ["sync", "extra"],
   ])
     failure(await invoke(root, args), /usage/, 2);
   assert.deepEqual(await snapshot(root), before);
   success(await invoke(root, ["help"]));
+  assert.match(success(await invoke(root, [])).stdout, /pnpm skills sync/);
+  assert.deepEqual(await snapshot(root), before);
   success(await invoke(root));
   assert.deepEqual((await manifest(root)).sources, []);
   assert.deepEqual((await locked(root)).repository.installed, {});
@@ -215,6 +227,36 @@ test("CLI grammar returns usage errors and legacy-empty sync migrates without re
   success(await invoke(root));
   assert.deepEqual(await snapshot(root), migrated);
   assert.equal(await readFile(join(root, "LICENSE"), "utf8"), projectTerms);
+});
+
+test("skills command shows help by default and syncs only through its explicit subcommand", async (t) => {
+  const root = await project(t, false);
+  const repositoryRoot = dirname(dirname(cli));
+  const configuration = JSON.parse(await readFile(join(repositoryRoot, "package.json"), "utf8"));
+  assert.equal(configuration.scripts.skills, "bash skills.sh");
+  assert.equal(configuration.scripts.sync, undefined);
+  for (const name of ["scripts", "skills.sh"])
+    await cp(join(repositoryRoot, name), join(root, name), { recursive: true });
+  await mkdir(join(root, "node_modules"));
+  await symlink(
+    dirname(dirname(fileURLToPath(import.meta.resolve("skills")))),
+    join(root, "node_modules/skills"),
+  );
+  const env = {
+    ...process.env,
+    PATH: `${dirname(process.execPath)}:${process.env.PATH}`,
+    DO_NOT_TRACK: "1",
+  };
+  const cwd = await temporary(t);
+  const before = await snapshot(root);
+  const help = await run("bash", [join(root, "skills.sh")], { cwd, env });
+  assert.match(help.stdout, /pnpm skills add/);
+  assert.deepEqual(await snapshot(root), before);
+  await run("bash", [join(root, "skills.sh"), "sync"], { cwd, env });
+  assert.equal((await manifest(root)).version, 2);
+  const migrated = await snapshot(root);
+  await run("bash", [join(root, "skills.sh"), "help"], { cwd, env });
+  assert.deepEqual(await snapshot(root), migrated);
 });
 
 test("named batch add, offline selective removal, exclusions and renamed declarations", async (t) => {
@@ -263,14 +305,14 @@ test("named batch add, offline selective removal, exclusions and renamed declara
   assert.doesNotMatch(await readFile(join(root, "LICENSE"), "utf8"), /Alpha attribution/);
   await put(join(origin, "skills/alpha/SKILL.md"), skill("Renamed Alpha"));
   await commit(origin);
-  success(await invoke(root, [], env));
+  success(await invoke(root, ["sync"], env));
   assert.deepEqual(await readdir(join(root, "skills")), ["beta"]);
   success(await invoke(root, ["add", url, "--skill", "Renamed Alpha"], env));
   assert.deepEqual((await readdir(join(root, "skills"))).sort(), ["beta", "renamed-alpha"]);
   success(await invoke(root, ["remove", "beta", "renamed-alpha"]));
   assert.deepEqual(await readdir(join(root, "skills")), []);
   assert.equal(await readFile(join(root, "LICENSE"), "utf8"), projectTerms);
-  success(await invoke(root, [], env));
+  success(await invoke(root, ["sync"], env));
   assert.deepEqual(await readdir(join(root, "skills")), []);
   success(await invoke(root, ["remove", "--source", "source-1"]));
   assert.deepEqual((await manifest(root)).sources, []);
@@ -337,8 +379,8 @@ test("pending manifest edits require explicit sync before add, remove or list", 
       ["list"],
       ["list", "--available", other],
     ])
-      await unchanged(root, before, await invoke(root, args, env), /manifest.*pnpm sync/i);
-    success(await invoke(root, [], env));
+      await unchanged(root, before, await invoke(root, args, env), /manifest.*pnpm skills sync/i);
+    success(await invoke(root, ["sync"], env));
     assert.deepEqual(
       (await readdir(join(root, "skills"))).sort(),
       change === "source" ? ["beta"] : change === "selection" ? ["alpha"] : ["alpha", "beta"],
@@ -402,7 +444,7 @@ test("local changes, unmanaged paths, executable bits and extension loss are pre
   await unchanged(
     root,
     await snapshot(root),
-    await invoke(root, [], env),
+    await invoke(root, ["sync"], env),
     /Managed content changed/,
   );
   await rm(join(root, "skills/alpha/ignored.txt"));
@@ -420,7 +462,7 @@ test("local changes, unmanaged paths, executable bits and extension loss are pre
   await unchanged(
     root,
     await snapshot(root),
-    await invoke(root, [], env),
+    await invoke(root, ["sync"], env),
     /Damaged ownership extension/,
   );
 });
@@ -469,19 +511,24 @@ test("legacy bootstrap proves raw HEAD ownership of every artifact", async (t) =
   const { root, env } = await legacyProject(t, origin);
   await run("git", ["config", "core.fileMode", "false"], { cwd: root });
   await chmod(join(root, "skills/one/SKILL.md"), 0o755);
-  await unchanged(root, await snapshot(root), await invoke(root, [], env), /Legacy.*(?:HEAD|bit)/s);
+  await unchanged(
+    root,
+    await snapshot(root),
+    await invoke(root, ["sync"], env),
+    /Legacy.*(?:HEAD|bit)/s,
+  );
   await chmod(join(root, "skills/one/SKILL.md"), 0o644);
   await put(join(root, "skills/one/staged.txt"), "Only in index\n");
   await run("git", ["add", "skills/one/staged.txt"], { cwd: root });
   await unchanged(
     root,
     await snapshot(root),
-    await invoke(root, [], env),
+    await invoke(root, ["sync"], env),
     /Legacy.*(?:HEAD|tracked)/s,
   );
   await run("git", ["reset", "--quiet", "HEAD", "--", "skills/one/staged.txt"], { cwd: root });
   await rm(join(root, "skills/one/staged.txt"));
-  success(await invoke(root, [], env));
+  success(await invoke(root, ["sync"], env));
   assert.equal(
     await readFile(join(root, "skills/one/resources/tab\tname.txt"), "utf8"),
     "Raw tracked bytes\n",
@@ -507,7 +554,7 @@ test("legacy migration retains deleted origins and rejects declaration swaps", a
     await unchanged(
       root,
       await snapshot(root),
-      await invoke(root, [], env),
+      await invoke(root, ["sync"], env),
       mutation === "deleted"
         ? /Legacy origin.*disappeared/
         : mutation === "swapped"
@@ -545,7 +592,7 @@ test("Git locator refs, source binding, selective add and SDK hash compatibility
   success(await invoke(root, ["add", `${url}#main`, "--skill", "two"], env));
   assert.deepEqual((await locked(root)).repository.installed.one, first);
   const before = await snapshot(root);
-  success(await invoke(root, [], env));
+  success(await invoke(root, ["sync"], env));
   assert.deepEqual(await snapshot(root), before);
   const local = await resolveSource(join(root, "skills/one"));
   const sandbox = await temporary(t);
@@ -595,7 +642,7 @@ test("Git locator refs, source binding, selective add and SDK hash compatibility
   await unchanged(
     root,
     await snapshot(root),
-    await invoke(root, [], changedEnv),
+    await invoke(root, ["sync"], changedEnv),
     /cannot be retargeted/,
   );
 });
@@ -970,7 +1017,7 @@ test("subpath locator refs survive list and later add while notices bind to repo
     "nested/skills/one",
   );
   const generated = await snapshot(root);
-  success(await invoke(root, [], env));
+  success(await invoke(root, ["sync"], env));
   assert.deepEqual(await snapshot(root), generated);
   const previous = (await locked(root)).repository.installed["nested-one"];
   success(await invoke(root, ["list"]));
@@ -1086,7 +1133,7 @@ test("a live repository owner blocks list, add and sync", async (t) => {
   for (const args of [
     ["list"],
     ["add", "https://fixture.invalid/unused.git", "--all", "--ref", "main"],
-    [],
+    ["sync"],
   ])
     await unchanged(root, before, await invoke(root, args), /command is running/);
 });

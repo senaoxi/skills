@@ -645,7 +645,7 @@ async function readState(root, command) {
     const legacyOwners = await legacyOwnership(root, lock, manifest);
     if (command.type !== "sync")
       fail(
-        "Run pnpm sync once to migrate the clean legacy snapshot and establish ownership receipts before add, remove, or list",
+        "Run pnpm skills sync once to migrate the clean legacy snapshot and establish ownership receipts before add, remove, or list",
       );
     return {
       manifest,
@@ -682,7 +682,7 @@ async function readState(root, command) {
       );
   if (command.type !== "sync" && repository.manifestHash !== manifestHash(manifest))
     fail(
-      "Source manifest has pending policy edits; run pnpm sync to reconcile them before add, remove or list",
+      "Source manifest has pending policy edits; run pnpm skills sync to reconcile them before add, remove or list",
     );
   if (repository.licenseHash !== digest(Buffer.from(license)))
     fail(
@@ -1081,7 +1081,9 @@ export async function manageRepository(directory, command = { type: "sync" }) {
       const result = await resolveSelection(policy, bindings[policy.id], command, staging);
       for (const receipt of result.receipts) {
         if (existing && active(policy, receipt.origin))
-          fail(`Duplicate add of active origin ${describe(receipt)}; use pnpm sync to refresh`);
+          fail(
+            `Duplicate add of active origin ${describe(receipt)}; use pnpm skills sync to refresh`,
+          );
         if (policy.selection.mode === "all")
           policy.selection.exclude = policy.selection.exclude.filter(
             (value) => originKey(value) !== originKey(receipt.origin),

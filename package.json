@@ -6,8 +6,8 @@
   "scripts": {
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "sync": "bash sync.sh",
-    "test": "node --test scripts/sync.test.mjs"
+    "skills": "bash skills.sh",
+    "test": "node --test scripts/skills.test.mjs"
   },
   "devDependencies": {
     "oxfmt": "0.78.0",
