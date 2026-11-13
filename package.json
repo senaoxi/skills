@@ -7,9 +7,10 @@
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "skills": "bash skills.sh",
-    "test": "node --test scripts/skills.test.mjs"
+    "test": "node --test tests/skills.test.mjs"
   },
   "devDependencies": {
+    "ignore": "7.0.14",
     "oxfmt": "0.78.0",
     "skills": "1.8.1"
   },

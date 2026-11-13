@@ -5,6 +5,7 @@ on:
     paths:
       - skills.sh
       - scripts/**
+      - .skillsignore
       - skills-sources.json
       - my-skills/**
       - LICENSE

@@ -76,6 +76,8 @@ pnpm skills add ./my-skills --all
 ```
 
 Edit that source directory, then run `pnpm skills sync` to refresh the copies.
+Keep a skill's tests under `my-skills/<skill>/tests/`. The root
+`.skillsignore` excludes test files and directories from published copies.
 Commit the original skills with the generated files so GitHub Actions can sync
 from its own checkout.
 The `skills/` directory is managed output. Unregistered directories and edits to
@@ -88,6 +90,21 @@ register the same source. Run `pnpm skills sync` in the original checkout to
 migrate an existing absolute source inside the repository. For a previously
 registered external directory, use `pnpm skills remove --source SOURCE_ID`,
 then add the originals under `my-skills/` or register a remote Git source.
+
+## Filter published files
+
+The root `.skillsignore` applies globally to skills from every configured source,
+including `my-skills/`, remote Git repositories, and downloads. The manager
+reads it on sync and when adding a skill. It matches paths relative to each
+skill's root and ignores case.
+
+Rules use [`.gitignore` pattern syntax](https://git-scm.com/docs/gitignore).
+For example, `tests/` excludes directories with that name at any depth,
+`/drafts/` excludes only top-level drafts, and `!example.test.mjs` can
+restore a file matched by an earlier rule when its parent directory is included.
+Keep `SKILL.md` and the applicable license terms available. An absent or empty
+`.skillsignore` adds no exclusions. Run `pnpm skills sync` after editing it
+to refresh already published skills.
 
 ## Configure source selections
 
@@ -160,8 +177,9 @@ Empty directories within centralized license collections are removed so Git can
 retain the exact published tree.
 Other empty source directories fail before publication because Git cannot retain
 them. Add a tracked file or marker in the source directory.
-A second local SDK installation computes the published SDK hash after stripping
-those license files. The original installed digest remains separate provenance.
+A second local SDK installation computes the published SDK hash after removing
+centralized license files and paths matched by `.skillsignore`. The original
+installed digest records the input package.
 Attribution files such as `NOTICE` also appear in the root declaration and remain
 inside the skill when they are not license files. Removing a skill removes its
 notice associations. Empty selections leave the project's license prefix alone.

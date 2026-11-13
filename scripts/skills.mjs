@@ -18,6 +18,7 @@ import { hostname } from "node:os";
 import { basename, dirname, isAbsolute, join, posix, relative, resolve, sep } from "node:path";
 import { promisify } from "node:util";
 import { setTimeout } from "node:timers/promises";
+import ignore from "ignore";
 import { installSkills, resolveSource } from "skills";
 
 const run = promisify(execFile);
@@ -217,6 +218,14 @@ function noticeLocation(path) {
   )
     return { owner: posix.dirname(path) === "." ? "" : posix.dirname(path), license: false };
 }
+async function readPublishRules(root) {
+  const patterns = await readFile(join(root, ".skillsignore"), "utf8").catch((error) => {
+    if (error.code === "ENOENT") return "";
+    throw error;
+  });
+  const rules = ignore({ ignorecase: true }).add(patterns);
+  return (path, kind = "file") => rules.ignores(kind === "directory" ? `${path}/` : path);
+}
 function noticeText(bytes, label) {
   const text = new TextDecoder("utf-8", { fatal: true, ignoreBOM: true }).decode(bytes);
   if (!text.trim() || text.includes("\0")) fail(`Empty or binary notice: ${label}`);
@@ -235,7 +244,13 @@ function noticeText(bytes, label) {
 function noticeRecord(path, bytes) {
   return { path, text: noticeText(bytes, path), sha256: digest(bytes) };
 }
-export async function collectNotices(repository, commit, skillPaths, objects) {
+export async function collectNotices(
+  repository,
+  commit,
+  skillPaths,
+  objects,
+  isIgnored = () => false,
+) {
   const tree = await objects.tree(commit);
   if (!Array.isArray(tree)) fail(`${repository}: incomplete Git tree`);
   const folders = skillPaths.map((path) => (path === "." ? "" : path));
@@ -246,7 +261,9 @@ export async function collectNotices(repository, commit, skillPaths, objects) {
         entry.type !== "blob" ||
         !location ||
         !folders.some(
-          (folder) => contains(location.owner, folder) || contains(folder, location.owner),
+          (folder) =>
+            (contains(location.owner, folder) || contains(folder, location.owner)) &&
+            (!contains(folder, entry.path) || !isIgnored(posix.relative(folder, entry.path))),
         )
       )
         return [];
@@ -294,8 +311,8 @@ async function gitObjects(remote, commit, staging) {
     blob: async (sha) => (await git("cat-file", "blob", sha)).stdout,
   };
 }
-async function snapshotNotices(path, listing) {
-  const files = listing.records.filter(([name, kind]) => kind === "file" && noticeLocation(name));
+async function snapshotNotices(path, records) {
+  const files = records.filter(([name, kind]) => kind === "file" && noticeLocation(name));
   if (
     !files.some(([name]) => {
       const location = noticeLocation(name);
@@ -485,8 +502,15 @@ async function sdkReceipt(handle, selector, staging) {
     fail(`Missing SDK computedHash for ${selector}`);
   return { name: basename(path), declaredName, path, listing, sdk, skill: matches[0] };
 }
-async function installReceipt(handle, selector, policy, binding, staging, objects) {
+async function installReceipt(handle, selector, policy, binding, staging, objects, isIgnored) {
   const receipt = await sdkReceipt(handle, selector, staging);
+  if (isIgnored("SKILL.md")) fail(`.skillsignore excludes required SKILL.md for ${selector}`);
+  const ignored = new Set(
+    receipt.listing.records
+      .filter(([path, kind]) => path && isIgnored(path, kind))
+      .map(([path]) => path),
+  );
+  const retained = receipt.listing.records.filter(([path]) => !ignored.has(path));
   const origin = observedOrigin(receipt.skill);
   const source = handle.source;
   let provenance;
@@ -501,7 +525,7 @@ async function installReceipt(handle, selector, policy, binding, staging, object
     )
       fail(`SDK Git path does not match the discovered origin for ${receipt.declaredName}`);
     provenance = { kind: "git", remote: source.url, commit: source.commit, ref: policy.ref, path };
-    notices = await collectNotices(source.url, source.commit, [path], objects);
+    notices = await collectNotices(source.url, source.commit, [path], objects, isIgnored);
   } else {
     provenance = {
       kind: "installed-snapshot",
@@ -509,12 +533,12 @@ async function installReceipt(handle, selector, policy, binding, staging, object
       sourceType: receipt.sdk.sourceType,
       digest: receipt.listing.hash,
     };
-    notices = await snapshotNotices(receipt.path, receipt.listing);
+    notices = await snapshotNotices(receipt.path, retained);
   }
   // The SDK writes local paths relative to its temporary install directory.
   if (binding.url !== source.url) receipt.sdk = { ...receipt.sdk, source: binding.url };
   const centralizedNotices = [];
-  for (const [path, kind] of receipt.listing.records) {
+  for (const [path, kind] of retained) {
     if (kind !== "file" || !noticeLocation(path)?.license) continue;
     const bytes = await readFile(join(receipt.path, path));
     const text = noticeText(bytes, path);
@@ -529,17 +553,31 @@ async function installReceipt(handle, selector, policy, binding, staging, object
     await rm(join(receipt.path, path));
     centralizedNotices.push({ path, noticePath: originalPath, sha256: digest(bytes) });
   }
+  const prunedParents = new Set();
   for (const [path, kind] of receipt.listing.records.toReversed()) {
-    if (kind !== "directory" || !path || (await readdir(join(receipt.path, path))).length) continue;
-    if (path.split("/").some((part) => /^licen[cs]es$/i.test(part)))
-      await rm(join(receipt.path, path), { recursive: true });
-    else
+    if (!path) continue;
+    const parent = posix.dirname(path);
+    if (ignored.has(parent)) continue;
+    const absolute = join(receipt.path, path);
+    if (ignored.has(path)) {
+      await rm(absolute, { recursive: kind === "directory" });
+      prunedParents.add(parent);
+      continue;
+    }
+    if (kind !== "directory" || (await readdir(absolute)).length) continue;
+    if (prunedParents.has(path)) {
+      await rm(absolute, { recursive: true });
+      prunedParents.add(parent);
+    } else if (path.split("/").some((part) => /^licen[cs]es$/i.test(part))) {
+      await rm(absolute, { recursive: true });
+    } else {
       fail(
         `${policy.source}: Git cannot retain empty directory ${path} in ${receipt.declaredName}; add a tracked file or marker in the source`,
       );
+    }
   }
   // The SDK remains the authority for the hash after intentional packaging changes.
-  if (centralizedNotices.length) {
+  if (centralizedNotices.length || ignored.size) {
     const local = await resolveSource(receipt.path);
     try {
       const published = await sdkReceipt(local, receipt.skill.name, staging);
@@ -1024,7 +1062,7 @@ function validateAssociations(manifest, bindings, receipts) {
       fail(`Receipt has no active selected origin in its source policy: ${describe(receipt)}`);
   }
 }
-async function resolveSelection(root, policy, prior, command, staging) {
+async function resolveSelection(root, policy, prior, command, staging, isIgnored) {
   const { handle, binding } = await openSource(root, policy, prior);
   try {
     const discovered = handle.skills.map((skill) => ({ skill, origin: observedOrigin(skill) }));
@@ -1046,7 +1084,9 @@ async function resolveSelection(root, policy, prior, command, staging) {
         : undefined;
     const receipts = [];
     for (const selector of selectors)
-      receipts.push(await installReceipt(handle, selector, policy, binding, staging, objects));
+      receipts.push(
+        await installReceipt(handle, selector, policy, binding, staging, objects, isIgnored),
+      );
     admit(receipts);
     return { receipts, binding: { input: policy.source, binding } };
   } finally {
@@ -1095,6 +1135,7 @@ export async function manageRepository(directory, command = { type: "sync" }) {
     const manifest = structuredClone(state.manifest);
     let receipts = [...state.receipts];
     const bindings = structuredClone(state.bindings);
+    const isIgnored = command.type === "remove" ? undefined : await readPublishRules(root);
     if (command.type === "remove") {
       let removed;
       if (command.sourceId) {
@@ -1146,7 +1187,14 @@ export async function manageRepository(directory, command = { type: "sync" }) {
         };
         manifest.sources.push(policy);
       }
-      const result = await resolveSelection(root, policy, bindings[policy.id], command, staging);
+      const result = await resolveSelection(
+        root,
+        policy,
+        bindings[policy.id],
+        command,
+        staging,
+        isIgnored,
+      );
       for (const receipt of result.receipts) {
         if (existing && active(policy, receipt.origin))
           fail(
@@ -1164,7 +1212,14 @@ export async function manageRepository(directory, command = { type: "sync" }) {
       receipts = [];
       for (const policy of manifest.sources) {
         policy.source = await repositorySource(root, policy.source);
-        const result = await resolveSelection(root, policy, bindings[policy.id], command, staging);
+        const result = await resolveSelection(
+          root,
+          policy,
+          bindings[policy.id],
+          command,
+          staging,
+          isIgnored,
+        );
         receipts.push(...result.receipts);
         bindings[policy.id] = result.binding;
       }

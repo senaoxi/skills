@@ -35,7 +35,7 @@ Source ID: source-2
 Declared name: answer-me-with-html
 Origin: answer-me-with-html
 Source: ./my-skills
-Installed-content SHA-256: 8aca2228cc02fcc1da57e335aa8938faa3ecea9a1945f5cef512a015161683e7
+Installed-content SHA-256: bec72d41e6ddef80f11316e73cbaa9f54260a8609fe4d5b6ef19df58d7822057
 Transport: local
 
 ### LICENSE

@@ -4,7 +4,7 @@
     "answer-me-with-html": {
       "source": "./my-skills",
       "sourceType": "local",
-      "computedHash": "816dd3f0c7d5e90fe81bd3a011d8ffc6aa7d8906fc969b1710a81f4d8ac8602d",
+      "computedHash": "6319343aeb5bbff591849d3327628a7dca4a006ce97e69b9697b0f2e934c029d",
       "installMode": "copy"
     },
     "architect": {
@@ -172,7 +172,7 @@
       "ref": "main",
       "sourceType": "github",
       "skillPath": "skills/poteto-mode/SKILL.md",
-      "computedHash": "6d9089bb1e05d74fd07e61c71711decc3566ef97f7535a0696a6432e42c9c797",
+      "computedHash": "099b0a11c17e9c0e19d149426925ec4483ea7a3cb3d3137de649adb58a13897c",
       "installMode": "copy"
     },
     "principle-attack-the-premise": {
@@ -412,7 +412,7 @@
       "ref": "main",
       "sourceType": "github",
       "skillPath": "skills/statechart/SKILL.md",
-      "computedHash": "a524c1665e498606304cd4e177e801c274313e40a554f4842a4c5729165077ca",
+      "computedHash": "a20d29206bd49292b98a7b67078eed065448ff47010ef20c6b91b624efa4ba8a",
       "installMode": "copy"
     },
     "swarm": {
@@ -503,11 +503,11 @@
           "kind": "installed-snapshot",
           "source": "./my-skills",
           "sourceType": "local",
-          "digest": "8aca2228cc02fcc1da57e335aa8938faa3ecea9a1945f5cef512a015161683e7"
+          "digest": "bec72d41e6ddef80f11316e73cbaa9f54260a8609fe4d5b6ef19df58d7822057"
         },
-        "installedDigest": "8aca2228cc02fcc1da57e335aa8938faa3ecea9a1945f5cef512a015161683e7",
-        "treeHash": "0001f4748c3bc6ee917e1175f4dc101e04fb88b6599aebda90e9d593e7ceb6f4",
-        "sdkRecordHash": "3f18674a83a65c3c74531e5c99cd498eb8c19e795cbc8dcf99473ec29a787b78",
+        "installedDigest": "bec72d41e6ddef80f11316e73cbaa9f54260a8609fe4d5b6ef19df58d7822057",
+        "treeHash": "ff808652bcf725c4fabc49c836a5af574cf6e20cf479c384fd8cfb113df565d5",
+        "sdkRecordHash": "9b1f1f39581e227f30a7ff3886f17930f801e08d1b784a04606213e5e6d5557e",
         "notices": [
           {
             "path": "LICENSE",
@@ -1118,8 +1118,8 @@
           "path": "skills/poteto-mode"
         },
         "installedDigest": "befc5348b61b82e9c4fc111a587a51f03af7aac8917c848e30777e58a8f19012",
-        "treeHash": "befc5348b61b82e9c4fc111a587a51f03af7aac8917c848e30777e58a8f19012",
-        "sdkRecordHash": "d2bba1b1766b3cb51aa346aee17b6c35404c03292ef9899fb0c164e19f12e082",
+        "treeHash": "e144a90522f47008c58c658b5874c2909691841aa42e9ecdd515375c8d3cc714",
+        "sdkRecordHash": "ddd28e694192261b002ec8c2ce6a5e6d2b6be98da4d4ad6ea61270232ec0d199",
         "notices": [
           {
             "path": "LICENSE",
@@ -1898,8 +1898,8 @@
           "path": "skills/statechart"
         },
         "installedDigest": "a9cdccac2f4ca184cc2f9fa6bc3f7584b03292d04d793c72fe38ab9dd626f1d5",
-        "treeHash": "a9cdccac2f4ca184cc2f9fa6bc3f7584b03292d04d793c72fe38ab9dd626f1d5",
-        "sdkRecordHash": "f72e21bfc287ec0fb6d59e13ea3bc3ccc3729834d61b16be04ac56f75bb9c724",
+        "treeHash": "ae47b3a843965ea5409c8f710d8c3bc04bb149e278991fbc7f67bcf4b2b2795a",
+        "sdkRecordHash": "5490db24b3c38588094d53bd2361228e3289145c9ff32d8d6b7c06d3879cd4f2",
         "notices": [
           {
             "path": "LICENSE",
@@ -2098,6 +2098,6 @@
       "skills-lock.json": 0,
       "LICENSE": 0
     },
-    "licenseHash": "cb516120e3dffbb654d3e04943f0694dc6df7e523f3cfec3366d2397abb11aca"
+    "licenseHash": "3c6297d0953ae6a8ba9b54c2fc5f31896f2d208bdf92799b74570470249de72a"
   }
 }

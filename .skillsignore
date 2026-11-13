@@ -1,0 +1,10 @@
+test/
+tests/
+__tests__/
+__mocks__/
+__snapshots__/
+*.test.*
+*.spec.*
+test_*.py
+*_test.py
+*_test.go
