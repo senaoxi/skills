@@ -14,8 +14,8 @@ import {
 } from "node:fs/promises";
 import { createServer } from "node:http";
 import { tmpdir } from "node:os";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { dirname, join, relative } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { promisify } from "node:util";
 import test from "node:test";
 import { installSkills, listSkills, resolveSource } from "skills";
@@ -801,7 +801,7 @@ for (const kind of ["local", "archive"])
     const root = await project(t);
     const name = `${kind}-empty`;
     const contents = { "SKILL.md": skill(name), LICENSE: terms };
-    const local = await temporary(t);
+    const local = join(root, "my-skills", name);
     for (const [path, content] of Object.entries(contents)) await put(join(local, path), content);
     await mkdir(join(local, "resources/empty"), { recursive: true });
     const files = new Map([["/empty.tar.gz", await archive(t, contents, ["resources/empty"])]]);
@@ -1032,7 +1032,7 @@ test("subpath locator refs survive list and later add while notices bind to repo
 
 test("local complete packages and unmanaged canonical collision diagnostics", async (t) => {
   const root = await project(t);
-  const local = await temporary(t);
+  const local = join(root, "my-skills", "local");
   await put(join(local, "SKILL.md"), skill("Local Skill"));
   await put(join(local, "LICENSE"), terms);
   await put(join(root, "skills/local-skill/SKILL.md"), "Unmanaged original\n");
@@ -1049,6 +1049,150 @@ test("local complete packages and unmanaged canonical collision diagnostics", as
     "installed-snapshot",
   );
   assert.equal((await locked(root)).skills["Local Skill"].sourceType, "local");
+});
+
+test("repository-relative sources keep portable metadata and sync in another checkout", async (t) => {
+  const root = await project(t);
+  const source = "./my-skills";
+  await put(join(root, source, "one/SKILL.md"), skill("one"));
+  await put(join(root, source, "one/LICENSE"), terms);
+  success(await invoke(root, ["add", "my-skills", "--all"]));
+  const lock = await locked(root);
+  const [policy] = (await manifest(root)).sources;
+  assert.equal(lock.skills.one.source, source);
+  assert.equal(lock.repository.sources[policy.id].binding.url, source);
+  assert.equal(lock.repository.installed.one.provenance.source, source);
+  assert.match(await readFile(join(root, "LICENSE"), "utf8"), /^Source: \.\/my-skills$/m);
+  for (const alias of [source, join(root, source)])
+    await unchanged(
+      root,
+      await snapshot(root),
+      await invoke(root, ["add", alias, "--all"]),
+      /already configured/,
+    );
+
+  await commit(root);
+  const checkout = await temporary(t);
+  await run("git", ["clone", "--quiet", root, checkout]);
+  await rm(root, { recursive: true, force: true });
+  const original = await snapshot(checkout);
+  success(await invoke(checkout));
+  assert.deepEqual(await snapshot(checkout), original);
+
+  const updated = `${skill("one")}\nUpdated in the new checkout.\n`;
+  await put(join(checkout, source, "one/SKILL.md"), updated);
+  await put(join(checkout, source, "two/SKILL.md"), skill("two"));
+  await put(join(checkout, source, "two/LICENSE"), terms);
+  success(await invoke(checkout));
+  assert.equal(await readFile(join(checkout, "skills/one/SKILL.md"), "utf8"), updated);
+  assert.equal(await readFile(join(checkout, "skills/two/SKILL.md"), "utf8"), skill("two"));
+});
+
+test("absolute repository sources are saved as relative paths and cannot be retargeted", async (t) => {
+  const root = await project(t);
+  const source = join(root, "my-skills");
+  await put(join(source, "one/SKILL.md"), skill("one"));
+  await put(join(source, "one/LICENSE"), terms);
+  await cp(source, join(root, "other"), { recursive: true });
+  success(await invoke(root, ["add", source, "--all"]));
+  const original = await locked(root);
+  const policy = await manifest(root);
+  const [local] = policy.sources;
+  assert.equal(local.source, "./my-skills");
+  assert.equal(original.repository.sources[local.id].binding.url, local.source);
+  assert.equal(original.skills.one.source, local.source);
+  const writeManifest = () => writeFile(join(root, "skills-sources.json"), JSON.stringify(policy));
+
+  local.source = "./other";
+  await writeManifest();
+  await unchanged(root, await snapshot(root), await invoke(root), /cannot be retargeted/);
+
+  local.source = "./my-skills";
+  await writeManifest();
+  success(await invoke(root));
+  const updated = await locked(root);
+  assert.equal(updated.repository.installed.one.sourceId, local.id);
+  assert.equal(
+    updated.repository.installed.one.treeHash,
+    original.repository.installed.one.treeHash,
+  );
+  assert.equal(updated.repository.sources[local.id].binding.url, local.source);
+  assert.equal(updated.skills.one.source, local.source);
+});
+
+test("sync migrates legacy absolute local records while allowing removal of external sources", async (t) => {
+  const root = await project(t);
+  const local = join(root, "my-skills");
+  await put(join(local, "one/SKILL.md"), skill("one"));
+  await put(join(local, "one/LICENSE"), terms);
+  success(await invoke(root, ["add", "./my-skills", "--all"]));
+  const original = await snapshot(root);
+  const policy = await manifest(root);
+  const [source] = policy.sources;
+  const lock = await locked(root);
+  const license = await readFile(join(root, "LICENSE"), "utf8");
+  const setLegacySource = async (path) => {
+    source.source = path;
+    lock.repository.sources[source.id].input = path;
+    lock.repository.sources[source.id].binding.url = path;
+    lock.repository.installed.one.provenance.source = path;
+    const legacyLicense = license.replace("Source: ./my-skills\n", `Source: ${path}\n`);
+    lock.repository.licenseHash = hash(legacyLicense);
+    lock.repository.manifestHash = hash(JSON.stringify(policy, null, 2) + "\n");
+    await put(join(root, "skills-sources.json"), JSON.stringify(policy, null, 2) + "\n");
+    await put(join(root, "skills-lock.json"), JSON.stringify(lock, null, 2) + "\n");
+    await put(join(root, "LICENSE"), legacyLicense);
+  };
+  await setLegacySource(local);
+  success(await invoke(root));
+  assert.deepEqual(await snapshot(root), original);
+
+  const outside = await temporary(t);
+  await cp(local, outside, { recursive: true });
+  await setLegacySource(outside);
+  await unchanged(
+    root,
+    await snapshot(root),
+    await invoke(root),
+    /Local skill sources must stay inside the repository/,
+  );
+  success(await invoke(root, ["remove", "--source", source.id]));
+  assert.deepEqual((await manifest(root)).sources, []);
+  assert.deepEqual(await readdir(join(root, "skills")), []);
+});
+
+test("external local sources are refused before publishing managed files", async (t) => {
+  const root = await project(t);
+  const outside = await temporary(t);
+  await put(join(outside, "one/SKILL.md"), skill("one"));
+  await put(join(outside, "one/LICENSE"), terms);
+  await symlink(outside, join(root, "outside-link"), "dir");
+  const original = await snapshot(root);
+  for (const source of [outside, relative(root, outside), "./outside-link"]) {
+    await unchanged(
+      root,
+      original,
+      await invoke(root, ["add", source, "--all"]),
+      /Local skill sources must stay inside the repository/,
+    );
+  }
+  await unchanged(
+    root,
+    original,
+    await invoke(root, ["add", pathToFileURL(outside).href, "--all", "--ref", "main"]),
+    /Local Git URLs are unsupported/,
+  );
+
+  await put(join(root, "my-skills", "two/SKILL.md"), skill("two"));
+  await put(join(root, "my-skills", "two/LICENSE"), terms);
+  success(await invoke(root, ["add", "my-skills", "--all"]));
+  await symlink(outside, join(root, "my-skills", "skills"), "dir");
+  await unchanged(
+    root,
+    await snapshot(root),
+    await invoke(root),
+    /Local skill sources must stay inside the repository/,
+  );
 });
 
 test("nested centralized license collections remain owned after commit and fresh checkout", async (t) => {

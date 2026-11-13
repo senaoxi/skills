@@ -67,21 +67,27 @@ working directory.
 
 ## Author local skills
 
-Keep original local skills in a source directory outside this repository to
-preserve its single-LICENSE layout. Each selected local package needs a
-`SKILL.md` and its complete applicable `LICENSE` file.
+Keep original local skills in `my-skills/`. Each selected local package needs
+a `SKILL.md` and its complete applicable `LICENSE` file. Register the directory
+once to sync all current and future skills it contains.
 
 ```sh
-pnpm skills add /absolute/path/to/authored-skill --skill my-skill
+pnpm skills add ./my-skills --all
 ```
 
-Edit that source directory, then run `pnpm skills sync` to refresh the copy.
+Edit that source directory, then run `pnpm skills sync` to refresh the copies.
+Commit the original skills with the generated files so GitHub Actions can sync
+from its own checkout.
 The `skills/` directory is managed output. Unregistered directories and edits to
 managed copies block management rather than becoming new source skills.
 
-Local source paths must exist on every machine that runs sync. For CI or shared
-use, keep the originals in a reachable Git repository and add that Git locator
-with a concrete ref.
+Local sources must resolve inside this repository, including when accessed
+through a symlink. The manager stores their paths relative to the repository
+root. `my-skills`, `./my-skills`, and the absolute path to that directory
+register the same source. Run `pnpm skills sync` in the original checkout to
+migrate an existing absolute source inside the repository. For a previously
+registered external directory, use `pnpm skills remove --source SOURCE_ID`,
+then add the originals under `my-skills/` or register a remote Git source.
 
 ## Configure source selections
 

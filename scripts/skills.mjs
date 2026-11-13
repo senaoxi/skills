@@ -9,12 +9,13 @@ import {
   open,
   readFile,
   readdir,
+  realpath,
   rename,
   rm,
   writeFile,
 } from "node:fs/promises";
 import { hostname } from "node:os";
-import { basename, dirname, isAbsolute, join, posix, relative, resolve } from "node:path";
+import { basename, dirname, isAbsolute, join, posix, relative, resolve, sep } from "node:path";
 import { promisify } from "node:util";
 import { setTimeout } from "node:timers/promises";
 import { installSkills, resolveSource } from "skills";
@@ -342,19 +343,67 @@ function observedOrigin(skill) {
   if (skill.path !== undefined) return parseOrigin({ kind: "path", path: skill.path });
   return parseOrigin({ kind: "declared", name: skill.name });
 }
-function sourceBinding(source) {
+function repositoryPath(root, path) {
+  const local = relative(root, path).split(sep).join("/");
+  if (local === "") return ".";
+  if (!safeRelative(local))
+    fail(
+      "Local skill sources must stay inside the repository. Use ./my-skills or a remote Git URL.",
+    );
+  return `./${local}`;
+}
+async function repositorySource(root, input) {
+  sourceInput(input);
+  if (/^file:/i.test(input))
+    fail("Local Git URLs are unsupported. Use a repository-relative path or a remote Git URL.");
+  const local =
+    isAbsolute(input) ||
+    /^[a-z]:[/\\]/i.test(input) ||
+    input.startsWith("./") ||
+    input.startsWith("../") ||
+    (!input.includes("/") && !input.includes(":") && !input.includes("\\"));
+  if (!local) return input;
+  const path = resolve(root, input);
+  const physicalRoot = await realpath(root);
+  const physicalPath = await realpath(path).catch((error) => {
+    if (error.code === "ENOENT" || error.code === "ENOTDIR") repositoryPath(root, path);
+    throw error;
+  });
+  return repositoryPath(physicalRoot, physicalPath);
+}
+function sourceBinding(source, policy) {
   sourceInput(source.url);
   if (source.subpath !== undefined && !safeRelative(source.subpath))
     fail("Unsafe SDK source subpath");
+  if (
+    gitTypes.has(source.type) &&
+    (/^file:/i.test(source.url) || !/^(?:[a-z][a-z\d+.-]*:\/\/|[^/:\\]+:[^:])/i.test(source.url))
+  )
+    fail("Local Git sources are unsupported. Use a repository-relative path or a remote Git URL.");
   return {
     type: source.type,
-    url: source.url,
+    url: source.type === "local" ? policy.source : source.url,
     ...(source.subpath ? { subpath: source.subpath } : {}),
   };
 }
-async function openSource(policy, previous) {
+async function matchesLegacyLocalBinding(previous, binding, absoluteSource) {
+  if (
+    binding.url === absoluteSource ||
+    !isAbsolute(previous?.url ?? "") ||
+    !equal(previous, { ...binding, url: previous.url })
+  )
+    return false;
+  try {
+    return (await realpath(previous.url)) === (await realpath(absoluteSource));
+  } catch (error) {
+    if (error.code === "ENOENT" || error.code === "ENOTDIR") return false;
+    throw error;
+  }
+}
+async function openSource(root, policy, previous) {
   const handle = await retryNetwork(() =>
     resolveSource(policy.source, {
+      cwd: root,
       ...(policy.ref ? { ref: policy.ref } : {}),
       telemetry: false,
       onWarning: (warning) => {
@@ -364,8 +413,24 @@ async function openSource(policy, previous) {
   );
   try {
     const source = handle.source;
-    const binding = sourceBinding(source);
-    if (previous && !equal(previous.binding, binding))
+    if (source.type === "local") {
+      const physicalRoot = await realpath(root);
+      const local = repositoryPath(physicalRoot, await realpath(source.url));
+      if (local !== policy.source)
+        fail(`Local skill source changed during discovery: ${policy.source}`);
+      for (const skill of handle.skills)
+        for (const path of [skill.path, ...(skill.duplicates ?? [])]) {
+          if (!safeRelative(path)) fail("Invalid local skill path");
+          repositoryPath(physicalRoot, await realpath(resolve(source.url, path, "SKILL.md")));
+        }
+    }
+    const binding = sourceBinding(source, policy);
+    // Migrate an older absolute binding only when it identifies this checkout's source.
+    if (
+      previous &&
+      !equal(previous.binding, binding) &&
+      !(await matchesLegacyLocalBinding(previous.binding, binding, source.url))
+    )
       fail(
         `Source ${policy.id} cannot be retargeted from ${json(previous.binding).trim()} to ${json(binding).trim()}`,
       );
@@ -420,7 +485,7 @@ async function sdkReceipt(handle, selector, staging) {
     fail(`Missing SDK computedHash for ${selector}`);
   return { name: basename(path), declaredName, path, listing, sdk, skill: matches[0] };
 }
-async function installReceipt(handle, selector, policy, staging, objects) {
+async function installReceipt(handle, selector, policy, binding, staging, objects) {
   const receipt = await sdkReceipt(handle, selector, staging);
   const origin = observedOrigin(receipt.skill);
   const source = handle.source;
@@ -440,12 +505,14 @@ async function installReceipt(handle, selector, policy, staging, objects) {
   } else {
     provenance = {
       kind: "installed-snapshot",
-      source: source.url,
+      source: binding.url,
       sourceType: receipt.sdk.sourceType,
       digest: receipt.listing.hash,
     };
     notices = await snapshotNotices(receipt.path, receipt.listing);
   }
+  // The SDK writes local paths relative to its temporary install directory.
+  if (binding.url !== source.url) receipt.sdk = { ...receipt.sdk, source: binding.url };
   const centralizedNotices = [];
   for (const [path, kind] of receipt.listing.records) {
     if (kind !== "file" || !noticeLocation(path)?.license) continue;
@@ -957,8 +1024,8 @@ function validateAssociations(manifest, bindings, receipts) {
       fail(`Receipt has no active selected origin in its source policy: ${describe(receipt)}`);
   }
 }
-async function resolveSelection(policy, prior, command, staging) {
-  const { handle, binding } = await openSource(policy, prior);
+async function resolveSelection(root, policy, prior, command, staging) {
+  const { handle, binding } = await openSource(root, policy, prior);
   try {
     const discovered = handle.skills.map((skill) => ({ skill, origin: observedOrigin(skill) }));
     let selectors;
@@ -979,19 +1046,20 @@ async function resolveSelection(policy, prior, command, staging) {
         : undefined;
     const receipts = [];
     for (const selector of selectors)
-      receipts.push(await installReceipt(handle, selector, policy, staging, objects));
+      receipts.push(await installReceipt(handle, selector, policy, binding, staging, objects));
     admit(receipts);
     return { receipts, binding: { input: policy.source, binding } };
   } finally {
     await handle.dispose();
   }
 }
-async function available(manifest, command) {
-  const known = manifest.sources.find((source) => source.source === command.source);
+async function available(root, manifest, command) {
+  const source = await repositorySource(root, command.source);
+  const known = manifest.sources.find((policy) => policy.source === source);
   if (known && command.ref !== undefined && command.ref !== known.ref)
     fail(`Source ${known.id} uses ref ${known.ref}; change its manifest policy explicitly`);
-  const policy = { source: sourceInput(command.source), ref: command.ref ?? known?.ref };
-  const { handle } = await openSource(policy);
+  const policy = { source, ref: command.ref ?? known?.ref };
+  const { handle } = await openSource(root, policy);
   try {
     return {
       available: handle.skills.map((skill) => ({
@@ -1011,7 +1079,7 @@ export async function manageRepository(directory, command = { type: "sync" }) {
   let staging;
   try {
     const state = await readState(root, command);
-    if (command.type === "available") return await available(state.manifest, command);
+    if (command.type === "available") return await available(root, state.manifest, command);
     if (command.type === "list")
       return {
         sources: state.manifest.sources,
@@ -1059,9 +1127,9 @@ export async function manageRepository(directory, command = { type: "sync" }) {
       const names = new Set(removed.map((receipt) => receipt.name));
       receipts = receipts.filter((receipt) => !names.has(receipt.name));
     } else if (command.type === "add") {
-      sourceInput(command.source);
+      const source = await repositorySource(root, command.source);
       refPolicy(command.ref);
-      let policy = manifest.sources.find((source) => source.source === command.source);
+      let policy = manifest.sources.find((policy) => policy.source === source);
       const existing = Boolean(policy);
       if (existing && command.ref !== undefined && command.ref !== policy.ref)
         fail(`Source ${policy.id} uses ref ${policy.ref}; change its manifest policy explicitly`);
@@ -1072,13 +1140,13 @@ export async function manageRepository(directory, command = { type: "sync" }) {
       if (!policy) {
         policy = {
           id: nextSourceId(manifest.sources),
-          source: command.source,
+          source,
           ...(command.ref ? { ref: command.ref } : {}),
           selection: command.all ? { mode: "all", exclude: [] } : { mode: "include", origins: [] },
         };
         manifest.sources.push(policy);
       }
-      const result = await resolveSelection(policy, bindings[policy.id], command, staging);
+      const result = await resolveSelection(root, policy, bindings[policy.id], command, staging);
       for (const receipt of result.receipts) {
         if (existing && active(policy, receipt.origin))
           fail(
@@ -1095,7 +1163,8 @@ export async function manageRepository(directory, command = { type: "sync" }) {
     } else if (command.type === "sync") {
       receipts = [];
       for (const policy of manifest.sources) {
-        const result = await resolveSelection(policy, bindings[policy.id], command, staging);
+        policy.source = await repositorySource(root, policy.source);
+        const result = await resolveSelection(root, policy, bindings[policy.id], command, staging);
         receipts.push(...result.receipts);
         bindings[policy.id] = result.binding;
       }

@@ -12,6 +12,7 @@ const help = `Manage this repository's external skills.
   pnpm skills help
 
 Git sources require a concrete ref. Existing exact sources reuse their ref.
+Local sources must stay inside this repository and are saved as relative paths.
 Add rejects active origins and installed-name collisions. Use pnpm skills sync to refresh.
 Remove uses canonical installed names from list. Batches succeed together.
 No subcommand prints this help.
