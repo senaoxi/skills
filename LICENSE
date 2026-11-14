@@ -1125,7 +1125,7 @@ Source ID: source-1
 Declared name: architect
 Origin: skills/architect
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/architect
 
 ### LICENSE
@@ -1158,7 +1158,7 @@ Source ID: source-1
 Declared name: arena
 Origin: skills/arena
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/arena
 
 ### LICENSE
@@ -1191,7 +1191,7 @@ Source ID: source-1
 Declared name: automate-me
 Origin: skills/automate-me
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/automate-me
 
 ### LICENSE
@@ -1224,7 +1224,7 @@ Source ID: source-1
 Declared name: benchmark-checklist
 Origin: skills/benchmark-checklist
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/benchmark-checklist
 
 ### LICENSE
@@ -1257,7 +1257,7 @@ Source ID: source-1
 Declared name: blast-radius
 Origin: skills/blast-radius
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/blast-radius
 
 ### LICENSE
@@ -1290,7 +1290,7 @@ Source ID: source-1
 Declared name: bro
 Origin: skills/bro
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/bro
 
 ### LICENSE
@@ -1323,7 +1323,7 @@ Source ID: source-1
 Declared name: correct
 Origin: skills/correct
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/correct
 
 ### LICENSE
@@ -1356,7 +1356,7 @@ Source ID: source-1
 Declared name: create-formal-verification-skill
 Origin: skills/create-formal-verification-skill
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/create-formal-verification-skill
 
 ### LICENSE
@@ -1389,7 +1389,7 @@ Source ID: source-1
 Declared name: create-verification-skill
 Origin: skills/create-verification-skill
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/create-verification-skill
 
 ### LICENSE
@@ -1422,7 +1422,7 @@ Source ID: source-1
 Declared name: figure-it-out
 Origin: skills/figure-it-out
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/figure-it-out
 
 ### LICENSE
@@ -1455,7 +1455,7 @@ Source ID: source-1
 Declared name: how
 Origin: skills/how
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/how
 
 ### LICENSE
@@ -1488,7 +1488,7 @@ Source ID: source-1
 Declared name: in-your-own-words
 Origin: skills/in-your-own-words
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/in-your-own-words
 
 ### LICENSE
@@ -1521,7 +1521,7 @@ Source ID: source-1
 Declared name: interrogate
 Origin: skills/interrogate
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/interrogate
 
 ### LICENSE
@@ -1554,7 +1554,7 @@ Source ID: source-1
 Declared name: ketchup
 Origin: skills/ketchup
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/ketchup
 
 ### LICENSE
@@ -1587,7 +1587,7 @@ Source ID: source-1
 Declared name: ketchup-video
 Origin: skills/ketchup-video
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/ketchup-video
 
 ### LICENSE
@@ -1620,7 +1620,7 @@ Source ID: source-1
 Declared name: maintain-formal-verification-skill
 Origin: skills/maintain-formal-verification-skill
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/maintain-formal-verification-skill
 
 ### LICENSE
@@ -1653,7 +1653,7 @@ Source ID: source-1
 Declared name: maintain-verification-skill
 Origin: skills/maintain-verification-skill
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/maintain-verification-skill
 
 ### LICENSE
@@ -1686,7 +1686,7 @@ Source ID: source-1
 Declared name: make-bot-ui
 Origin: skills/make-bot-ui
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/make-bot-ui
 
 ### LICENSE
@@ -1719,7 +1719,7 @@ Source ID: source-1
 Declared name: no-comments
 Origin: skills/no-comments
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/no-comments
 
 ### LICENSE
@@ -1752,7 +1752,7 @@ Source ID: source-1
 Declared name: poteto-help
 Origin: skills/poteto-help
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/poteto-help
 
 ### LICENSE
@@ -1785,7 +1785,7 @@ Source ID: source-1
 Declared name: poteto-mode
 Origin: skills/poteto-mode
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/poteto-mode
 
 ### LICENSE
@@ -1818,7 +1818,7 @@ Source ID: source-1
 Declared name: principle-attack-the-premise
 Origin: skills/principle-attack-the-premise
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-attack-the-premise
 
 ### LICENSE
@@ -1851,7 +1851,7 @@ Source ID: source-1
 Declared name: principle-boundary-discipline
 Origin: skills/principle-boundary-discipline
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-boundary-discipline
 
 ### LICENSE
@@ -1884,7 +1884,7 @@ Source ID: source-1
 Declared name: principle-build-the-lever
 Origin: skills/principle-build-the-lever
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-build-the-lever
 
 ### LICENSE
@@ -1917,7 +1917,7 @@ Source ID: source-1
 Declared name: principle-encode-lessons-in-structure
 Origin: skills/principle-encode-lessons-in-structure
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-encode-lessons-in-structure
 
 ### LICENSE
@@ -1950,7 +1950,7 @@ Source ID: source-1
 Declared name: principle-exhaust-the-design-space
 Origin: skills/principle-exhaust-the-design-space
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-exhaust-the-design-space
 
 ### LICENSE
@@ -1983,7 +1983,7 @@ Source ID: source-1
 Declared name: principle-experience-first
 Origin: skills/principle-experience-first
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-experience-first
 
 ### LICENSE
@@ -2016,7 +2016,7 @@ Source ID: source-1
 Declared name: principle-explain-the-number
 Origin: skills/principle-explain-the-number
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-explain-the-number
 
 ### LICENSE
@@ -2049,7 +2049,7 @@ Source ID: source-1
 Declared name: principle-fix-root-causes
 Origin: skills/principle-fix-root-causes
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-fix-root-causes
 
 ### LICENSE
@@ -2082,7 +2082,7 @@ Source ID: source-1
 Declared name: principle-foundational-thinking
 Origin: skills/principle-foundational-thinking
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-foundational-thinking
 
 ### LICENSE
@@ -2115,7 +2115,7 @@ Source ID: source-1
 Declared name: principle-guard-the-context-window
 Origin: skills/principle-guard-the-context-window
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-guard-the-context-window
 
 ### LICENSE
@@ -2148,7 +2148,7 @@ Source ID: source-1
 Declared name: principle-laziness-protocol
 Origin: skills/principle-laziness-protocol
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-laziness-protocol
 
 ### LICENSE
@@ -2181,7 +2181,7 @@ Source ID: source-1
 Declared name: principle-make-operations-idempotent
 Origin: skills/principle-make-operations-idempotent
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-make-operations-idempotent
 
 ### LICENSE
@@ -2214,7 +2214,7 @@ Source ID: source-1
 Declared name: principle-migrate-callers-then-delete-legacy-apis
 Origin: skills/principle-migrate-callers-then-delete-legacy-apis
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-migrate-callers-then-delete-legacy-apis
 
 ### LICENSE
@@ -2247,7 +2247,7 @@ Source ID: source-1
 Declared name: principle-minimize-reader-load
 Origin: skills/principle-minimize-reader-load
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-minimize-reader-load
 
 ### LICENSE
@@ -2280,7 +2280,7 @@ Source ID: source-1
 Declared name: principle-model-the-domain
 Origin: skills/principle-model-the-domain
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-model-the-domain
 
 ### LICENSE
@@ -2313,7 +2313,7 @@ Source ID: source-1
 Declared name: principle-never-block-on-the-human
 Origin: skills/principle-never-block-on-the-human
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-never-block-on-the-human
 
 ### LICENSE
@@ -2346,7 +2346,7 @@ Source ID: source-1
 Declared name: principle-outcome-oriented-execution
 Origin: skills/principle-outcome-oriented-execution
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-outcome-oriented-execution
 
 ### LICENSE
@@ -2379,7 +2379,7 @@ Source ID: source-1
 Declared name: principle-prove-it-works
 Origin: skills/principle-prove-it-works
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-prove-it-works
 
 ### LICENSE
@@ -2412,7 +2412,7 @@ Source ID: source-1
 Declared name: principle-redesign-from-first-principles
 Origin: skills/principle-redesign-from-first-principles
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-redesign-from-first-principles
 
 ### LICENSE
@@ -2445,7 +2445,7 @@ Source ID: source-1
 Declared name: principle-separate-before-serializing-shared-state
 Origin: skills/principle-separate-before-serializing-shared-state
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-separate-before-serializing-shared-state
 
 ### LICENSE
@@ -2478,7 +2478,7 @@ Source ID: source-1
 Declared name: principle-sequence-verifiable-units
 Origin: skills/principle-sequence-verifiable-units
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-sequence-verifiable-units
 
 ### LICENSE
@@ -2511,7 +2511,7 @@ Source ID: source-1
 Declared name: principle-subtract-before-you-add
 Origin: skills/principle-subtract-before-you-add
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-subtract-before-you-add
 
 ### LICENSE
@@ -2544,7 +2544,7 @@ Source ID: source-1
 Declared name: principle-test-behavior-not-implementation
 Origin: skills/principle-test-behavior-not-implementation
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-test-behavior-not-implementation
 
 ### LICENSE
@@ -2577,7 +2577,7 @@ Source ID: source-1
 Declared name: principle-type-system-discipline
 Origin: skills/principle-type-system-discipline
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/principle-type-system-discipline
 
 ### LICENSE
@@ -2610,7 +2610,7 @@ Source ID: source-1
 Declared name: recall
 Origin: skills/recall
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/recall
 
 ### LICENSE
@@ -2643,7 +2643,7 @@ Source ID: source-1
 Declared name: reflect
 Origin: skills/reflect
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/reflect
 
 ### LICENSE
@@ -2676,7 +2676,7 @@ Source ID: source-1
 Declared name: setup-pstack
 Origin: skills/setup-pstack
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/setup-pstack
 
 ### LICENSE
@@ -2709,7 +2709,7 @@ Source ID: source-1
 Declared name: sharpen
 Origin: skills/sharpen
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/sharpen
 
 ### LICENSE
@@ -2742,7 +2742,7 @@ Source ID: source-1
 Declared name: show-me-your-work
 Origin: skills/show-me-your-work
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/show-me-your-work
 
 ### LICENSE
@@ -2775,7 +2775,7 @@ Source ID: source-1
 Declared name: statechart
 Origin: skills/statechart
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/statechart
 
 ### LICENSE
@@ -2808,7 +2808,7 @@ Source ID: source-1
 Declared name: swarm
 Origin: skills/swarm
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/swarm
 
 ### LICENSE
@@ -2841,7 +2841,7 @@ Source ID: source-1
 Declared name: tdd
 Origin: skills/tdd
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/tdd
 
 ### LICENSE
@@ -2874,7 +2874,7 @@ Source ID: source-1
 Declared name: teach
 Origin: skills/teach
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/teach
 
 ### LICENSE
@@ -2907,7 +2907,7 @@ Source ID: source-1
 Declared name: technical-writing
 Origin: skills/technical-writing
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/technical-writing
 
 ### LICENSE
@@ -2940,7 +2940,7 @@ Source ID: source-1
 Declared name: typescript-best-practices
 Origin: skills/typescript-best-practices
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/typescript-best-practices
 
 ### LICENSE
@@ -2973,7 +2973,7 @@ Source ID: source-1
 Declared name: unslop
 Origin: skills/unslop
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/unslop
 
 ### LICENSE
@@ -3006,7 +3006,7 @@ Source ID: source-1
 Declared name: why
 Origin: skills/why
 Remote: https://github.com/backnotprop/pstack.git
-Revision: 08547969e1dffaa6457ea65141cc62c1d9a2eef1
+Revision: 9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6
 Git path: skills/why
 
 ### LICENSE

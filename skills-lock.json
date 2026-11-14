@@ -20,7 +20,7 @@
       "ref": "main",
       "sourceType": "github",
       "skillPath": "skills/arena/SKILL.md",
-      "computedHash": "885f3ff84d66f09fcd3b26e9f1c4eb777d3191f0a02dbfe8eb306af1e3f4731d",
+      "computedHash": "5891632a9a0e3e44e71b199db2e13cf99dfdbe2c39ca08282464c4c58e7a560b",
       "installMode": "copy"
     },
     "automate-me": {
@@ -673,7 +673,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/architect"
         },
@@ -700,13 +700,13 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/arena"
         },
-        "installedDigest": "5921e0042e1ea9db98a2d76537c46e3d549c03a8a9503b9110c0994f619668f8",
-        "treeHash": "5921e0042e1ea9db98a2d76537c46e3d549c03a8a9503b9110c0994f619668f8",
-        "sdkRecordHash": "6e8356886bd0783f449fe7633e4fcd856823e9c2d22391c5bb2a7158a3ef3741",
+        "installedDigest": "117e72dde3fd414d915cb8f25c8d273d5d0350eee8389e5e855712fd97bf2591",
+        "treeHash": "117e72dde3fd414d915cb8f25c8d273d5d0350eee8389e5e855712fd97bf2591",
+        "sdkRecordHash": "5160725b395301055414c2439b5a6e3b1b011cf48b23e2272b52e83b5814b5c3",
         "notices": [
           {
             "path": "LICENSE",
@@ -727,7 +727,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/automate-me"
         },
@@ -754,7 +754,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/benchmark-checklist"
         },
@@ -781,7 +781,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/blast-radius"
         },
@@ -808,7 +808,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/bro"
         },
@@ -835,7 +835,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/correct"
         },
@@ -862,7 +862,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/create-formal-verification-skill"
         },
@@ -889,7 +889,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/create-verification-skill"
         },
@@ -916,7 +916,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/figure-it-out"
         },
@@ -943,7 +943,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/how"
         },
@@ -970,7 +970,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/in-your-own-words"
         },
@@ -997,7 +997,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/interrogate"
         },
@@ -1024,7 +1024,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/ketchup"
         },
@@ -1051,7 +1051,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/ketchup-video"
         },
@@ -1078,7 +1078,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/maintain-formal-verification-skill"
         },
@@ -1105,7 +1105,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/maintain-verification-skill"
         },
@@ -1132,7 +1132,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/make-bot-ui"
         },
@@ -1159,7 +1159,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/no-comments"
         },
@@ -1186,7 +1186,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/poteto-help"
         },
@@ -1213,7 +1213,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/poteto-mode"
         },
@@ -1240,7 +1240,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-attack-the-premise"
         },
@@ -1267,7 +1267,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-boundary-discipline"
         },
@@ -1294,7 +1294,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-build-the-lever"
         },
@@ -1321,7 +1321,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-encode-lessons-in-structure"
         },
@@ -1348,7 +1348,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-exhaust-the-design-space"
         },
@@ -1375,7 +1375,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-experience-first"
         },
@@ -1402,7 +1402,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-explain-the-number"
         },
@@ -1429,7 +1429,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-fix-root-causes"
         },
@@ -1456,7 +1456,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-foundational-thinking"
         },
@@ -1483,7 +1483,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-guard-the-context-window"
         },
@@ -1510,7 +1510,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-laziness-protocol"
         },
@@ -1537,7 +1537,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-make-operations-idempotent"
         },
@@ -1564,7 +1564,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-migrate-callers-then-delete-legacy-apis"
         },
@@ -1591,7 +1591,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-minimize-reader-load"
         },
@@ -1618,7 +1618,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-model-the-domain"
         },
@@ -1645,7 +1645,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-never-block-on-the-human"
         },
@@ -1672,7 +1672,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-outcome-oriented-execution"
         },
@@ -1699,7 +1699,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-prove-it-works"
         },
@@ -1726,7 +1726,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-redesign-from-first-principles"
         },
@@ -1753,7 +1753,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-separate-before-serializing-shared-state"
         },
@@ -1780,7 +1780,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-sequence-verifiable-units"
         },
@@ -1807,7 +1807,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-subtract-before-you-add"
         },
@@ -1834,7 +1834,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-test-behavior-not-implementation"
         },
@@ -1861,7 +1861,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/principle-type-system-discipline"
         },
@@ -1888,7 +1888,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/recall"
         },
@@ -1915,7 +1915,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/reflect"
         },
@@ -1942,7 +1942,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/setup-pstack"
         },
@@ -1969,7 +1969,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/sharpen"
         },
@@ -1996,7 +1996,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/show-me-your-work"
         },
@@ -2023,7 +2023,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/statechart"
         },
@@ -2050,7 +2050,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/swarm"
         },
@@ -2077,7 +2077,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/tdd"
         },
@@ -2104,7 +2104,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/teach"
         },
@@ -2131,7 +2131,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/technical-writing"
         },
@@ -2158,7 +2158,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/typescript-best-practices"
         },
@@ -2185,7 +2185,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/unslop"
         },
@@ -2212,7 +2212,7 @@
         "provenance": {
           "kind": "git",
           "remote": "https://github.com/backnotprop/pstack.git",
-          "commit": "08547969e1dffaa6457ea65141cc62c1d9a2eef1",
+          "commit": "9cd6939b766cb920f1c44970d7c7ee1ec28bd0d6",
           "ref": "main",
           "path": "skills/why"
         },
@@ -2235,6 +2235,6 @@
       "skills-lock.json": 0,
       "LICENSE": 0
     },
-    "licenseHash": "a8fc7b726b4a757a6492a9e40ce2875cbe2a52780d24cffd24815c6deb055f5d"
+    "licenseHash": "b52bcb022e01c4b68a12a00a6732ce18af40a714ac9fe99ec11a906d2acce7ef"
   }
 }
