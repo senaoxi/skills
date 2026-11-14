@@ -47,6 +47,30 @@ pnpm skills help
 `pnpm skills` without a subcommand prints help. Use `pnpm skills sync` to
 refresh configured selections. The previous `pnpm sync` entry has been removed.
 
+### Sync into your global skills directory
+
+```sh
+pnpm skills sync --global
+pnpm skills sync --global --mode symlink
+```
+
+This installs every immediate directory in `skills/` containing a regular
+`SKILL.md` into `~/.agents/skills/`, using the directory name. It warns before
+replacing same-named entries. Enter `y` or `yes` to proceed. Entries with other
+names are preserved, including ones removed from this repository since the
+previous global sync.
+
+Copy mode (`--mode copy`) is the default. It installs standalone directories
+that you can refresh by running the command again. Copy mode rejects symbolic
+links inside source skills. For development,
+`--mode symlink` links directly to this checkout, so installed skills read the
+current files in `skills/`. Run the relevant artifact build first if you changed
+a workspace skill's source files. If a sync is interrupted and leaves
+`.skills-global-sync.lock` in the destination, inspect its `backup/` directory
+before retrying.
+
+### Manage external sources
+
 Add requires named selectors or `--all`. A batch succeeds together or fails
 together. Git sources require a concrete branch, tag, or commit, supplied by
 `--ref` or an SDK-supported locator. Literal `HEAD` is rejected. An exact

@@ -122,7 +122,11 @@ export type RepositoryCommand =
   | RemoveCommand
   | { type: "list" }
   | AvailableCommand;
-export type Command = RepositoryCommand | { type: "help" };
+export type GlobalSyncMode = "copy" | "symlink";
+export type Command =
+  | RepositoryCommand
+  | { type: "sync-global"; mode: GlobalSyncMode }
+  | { type: "help" };
 
 /** The complete prepared tree, including notices, before license centralization. */
 export interface PreparedLocalSkill {

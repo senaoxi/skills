@@ -1,12 +1,17 @@
 import { spawn } from "node:child_process";
 import { realpathSync } from "node:fs";
+import { homedir } from "node:os";
+import { join } from "node:path";
+import { createInterface } from "node:readline";
+import { syncGlobalSkills } from "./global-skills.mjs";
 import { manageRepository } from "./skills.mjs";
 import type { AddCommand, AvailableCommand, Command } from "./manager-types.mjs";
 import { errorMessage } from "./manager-shared.mjs";
 
-const help = `Manage this repository's external skills.
+const help = `Manage this repository's skills.
 
   pnpm skills sync
+  pnpm skills sync --global [--mode copy|symlink]
   pnpm skills add SOURCE (--skill SELECTOR)... [--ref REF]
   pnpm skills add SOURCE --all [--ref REF]
   pnpm skills remove NAME...
@@ -19,6 +24,7 @@ Git sources require a concrete ref. Existing exact sources reuse their ref.
 Local sources must stay inside this repository and are saved as relative paths.
 Add rejects active origins and installed-name collisions. Use pnpm skills sync to refresh.
 Remove uses canonical installed names from list. Batches succeed together.
+Sync --global copies skills/ to ~/.agents/skills by default and prompts before overwriting same-named entries.
 No subcommand prints this help.
 `;
 class UsageError extends Error {}
@@ -38,8 +44,14 @@ export function parseCommand(args: readonly string[]): Command {
     return { type: "help" };
   }
   if (verb === "sync") {
-    if (rest.length) usage("sync takes no arguments");
-    return { type: "sync" };
+    if (!rest.length) return { type: "sync" };
+    if (rest[0] === "--global") {
+      if (rest.length === 1) return { type: "sync-global", mode: "copy" };
+      const [, flag, mode] = rest;
+      if (rest.length === 3 && flag === "--mode" && (mode === "copy" || mode === "symlink"))
+        return { type: "sync-global", mode };
+    }
+    usage("sync accepts only --global [--mode copy|symlink]");
   }
   if (verb === "add") {
     const [source, ...flags] = rest;
@@ -83,6 +95,18 @@ export function parseCommand(args: readonly string[]): Command {
 export async function executeCli(args: readonly string[], cwd = process.cwd()): Promise<string> {
   const command = parseCommand(args);
   if (command.type === "help") return help;
+  if (command.type === "sync-global") {
+    const destination = join(homedir(), ".agents", "skills");
+    const count = await syncGlobalSkills({
+      source: join(cwd, "skills"),
+      destination,
+      mode: command.mode,
+      confirm: confirmGlobalSync,
+    });
+    if (count === null) return "Global skill sync cancelled.";
+    if (count === 0) return "No skill directories found in skills/.";
+    return `Synced ${count} skills to ${destination} (${command.mode}).`;
+  }
 
   if (command.type === "list") return JSON.stringify(await manageRepository(cwd, command), null, 2);
   if (command.type === "available")
@@ -90,6 +114,19 @@ export async function executeCli(args: readonly string[], cwd = process.cwd()): 
   const result = await manageRepository(cwd, command);
 
   return `Managed ${result.skills} skills from ${result.sources} sources. Updated skills-sources.json, skills/, skills-lock.json and LICENSE.`;
+}
+
+async function confirmGlobalSync(destination: string): Promise<boolean> {
+  process.stderr.write(
+    `This will overwrite same-named skills in the global skills directory ${destination}.\nContinue? [y/N] `,
+  );
+  const input = createInterface({ input: process.stdin, crlfDelay: Infinity });
+  try {
+    for await (const answer of input) return /^(y|yes)$/i.test(answer.trim());
+    return false;
+  } finally {
+    input.close();
+  }
 }
 
 async function runCli(args: string[]): Promise<void> {
