@@ -2,6 +2,10 @@
 
 Read this for an explicit settings, cleanup, or update request.
 
+The renderer and publisher use `~/.agents/.answer-me-with-html` by default. Set `AM_HOME` to use a different data directory.
+
+To migrate an earlier default, stop active renderer and publisher processes. Move the old data directory (`~/.agents/answer-me-with-html` or `~/.answer-me-with-html`) as a unit to `~/.agents/.answer-me-with-html`. If both source and destination exist, compare their contents before moving anything. Move the saved delivery Markdown from `~/.agents/answer-me-with-html-vercel.md` (or the earlier `~/.agents/answer-me-with-html.md`) into the new data directory as `publish-vercel.md`. If both old Markdown names exist, use `answer-me-with-html-vercel.md`. Preserve any existing `publish-vercel.md` until you resolve a conflict.
+
 When the arguments start with `config`, for example `/answer-me-with-html config open off`, use the settings CLI.
 
 - `config`: run `am config` to show the current settings, then let the user choose. Where the agent has a choice tool such as AskUserQuestion, use it: at most 4 settings at a time, these first: `open`, `theme`, `mode`, `style`, with the current value marked in the options. Otherwise ask in plain text.

@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"]
+  },
+  "files": ["../limina.config.mts"],
+  "liminaOptions": {
+    "outputs": {
+      "rootDir": "..",
+      "outDir": "../.build/config",
+      "target": "ES2022",
+      "declarationMap": false
+    }
+  }
+}

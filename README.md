@@ -1,28 +1,35 @@
 # Skills
 
-Manage and distribute external agent skills through one repository command.
-The initial manifest subscribes to every skill in
-[backnotprop/pstack](https://github.com/backnotprop/pstack). Future syncs retain
-that subscription unless you remove the source or exclude individual origins.
+Author local skills, mirror external skills, and distribute standalone skill
+directories from one private pnpm workspace. `packages/answer-me-with-html/`
+contains the local renderer's TypeScript source. External skills from
+[backnotprop/pstack](https://github.com/backnotprop/pstack) remain mirrors in
+`skills/`, alongside the assembled local skill.
+
+The root package has no release or publish workflow. See the
+[engineering contract](docs/engineering/skills-monorepo.md) for project ownership,
+build APIs, artifact assembly, and evaluation limits.
 
 ## Set up the repository
 
-Use Node.js 24 or later, Git, and the pnpm version pinned in `package.json`.
+Use Git, a Node.js version accepted by the root `engines.node`, and the pnpm
+version pinned in `package.json`. CI uses Node.js 24.15.0 and pnpm 12.18.0.
+TypeScript 6.0.3 and Limina 0.5.0 govern the native managed TypeScript build.
+The assembled `answer-me-with-html` skill has a separate Node.js 20+ runtime.
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm skills sync
+pnpm build
 ```
 
-The first sync migrates the previous unversioned manifest and SDK lock. It
-requires Git-tracked, unchanged `skills-sources.json`, `skills-lock.json`,
-`skills/`, and `LICENSE` from HEAD. Staged additions, ignored files, untracked
-nested directories, and changed executable bits also block migration, including
-when `core.fileMode` is false. Every existing legacy origin must remain
-discoverable, and a different origin cannot claim its installed directory.
-Preserve local changes before that sync.
-Add, remove, and list require this initial migration. Subsequent managed
-snapshots can remain uncommitted.
+`pnpm build` governs and compiles the workspace, validates source ownership, and
+assembles local skill artifacts. Run `pnpm skills sync` separately when you
+intend to fetch configured external sources. Local builds use the installed,
+locked dependencies and preserve unrelated external mirrors.
+
+For an older checkout whose lock still has `repository.version: 1`, follow the
+[explicit ownership migration](docs/engineering/skills-monorepo.md#ownership-migration).
+Keep the original staged and unstaged changes until that migration is reviewed.
 
 ## Add, list, and remove skills
 
@@ -61,40 +68,44 @@ snapshots. Unknown names or source IDs fail without publishing changes. Empty
 source lists and empty selections are valid.
 
 The CLI returns 0 for success, 2 for invalid arguments, and 1 for conflicts or
-operational failures. `skills.sh` changes to its own repository directory before
-calling the CLI. Direct `node /path/to/scripts/cli.mjs ...` manages its current
-working directory.
+operational failures. From another directory, use
+`pnpm --dir /path/to/skills skills list` to target this repository. Direct
+`node /path/to/.build/scripts/cli.mjs ...` manages its current working directory
+after compilation.
 
 ## Author local skills
 
-Keep original local skills in `my-skills/`. Each selected local package needs
-a `SKILL.md` and its complete applicable `LICENSE` file. Register the directory
-once to sync all current and future skills it contains.
+Keep authored skills under `packages/<directory>/`. The root discovers packages
+through `package.json` metadata with a unique `skillBuild.name`. Put static
+instructions and references in `skill/`, including `SKILL.md` and the complete
+applicable license terms.
 
 ```sh
-pnpm skills add ./my-skills --all
+pnpm build:ts
+pnpm artifacts:build --skill answer-me-with-html
+pnpm test:compiled --skill answer-me-with-html
 ```
 
-Edit that source directory, then run `pnpm skills sync` to refresh the copies.
-Keep a skill's tests under `my-skills/<skill>/tests/`. The root
-`.skillsignore` excludes test files and directories from published copies.
-Commit the original skills with the generated files so GitHub Actions can sync
-from its own checkout.
-The `skills/` directory is managed output. Unregistered directories and edits to
-managed copies block management rather than becoming new source skills.
+The renderer has separate Node, browser, and shared TypeScript projects.
+Its package-local assembler reads compiled JavaScript and static assets to create
+standalone scripts. Edit those source modules rather than a bundled renderer.
+Keep tests in `tests/` and evaluation cases in `evals/` inside the package.
+Documentation-only packages need no empty TypeScript project or assembler.
 
-Local sources must resolve inside this repository, including when accessed
-through a symlink. The manager stores their paths relative to the repository
-root. `my-skills`, `./my-skills`, and the absolute path to that directory
-register the same source. Run `pnpm skills sync` in the original checkout to
-migrate an existing absolute source inside the repository. For a previously
-registered external directory, use `pnpm skills remove --source SOURCE_ID`,
-then add the originals under `my-skills/` or register a remote Git source.
+`skills/` is tracked distribution output. `.build/` contains ignored compiler
+outputs, and Limina keeps generated build configurations under `.limina/`.
+Commit reviewed source and distribution changes together. Unknown files and
+edits to managed copies block replacement rather than becoming source skills.
+
+Local locators passed to the external manager must resolve inside this repository,
+including through symlinks. The manager stores those paths relative to the root.
+Use package discovery for authored workspace skills. The external SDK installer
+does not own workspace artifacts.
 
 ## Filter published files
 
 The root `.skillsignore` applies globally to skills from every configured source,
-including `my-skills/`, remote Git repositories, and downloads. The manager
+including local locators, remote Git repositories, and downloads. The manager
 reads it on sync and when adding a skill. It matches paths relative to each
 skill's root and ignores case.
 
@@ -104,7 +115,8 @@ For example, `tests/` excludes directories with that name at any depth,
 restore a file matched by an earlier rule when its parent directory is included.
 Keep `SKILL.md` and the applicable license terms available. An absent or empty
 `.skillsignore` adds no exclusions. Run `pnpm skills sync` after editing it
-to refresh already published skills.
+to refresh external mirrors. The local artifact validator also excludes tests,
+evaluation inputs, TypeScript source, and build metadata from standalone skills.
 
 ## Configure source selections
 
@@ -184,11 +196,18 @@ Attribution files such as `NOTICE` also appear in the root declaration and remai
 inside the skill when they are not license files. Removing a skill removes its
 notice associations. Empty selections leave the project's license prefix alone.
 
+The local renderer's `NOTICE` carries its source provenance and complete bundled
+dependency and asset terms into `skills/answer-me-with-html/`. A consumer who
+installs only that directory receives those terms. This supplements the existing
+root license aggregation policy and does not replace the project's license.
+
 ## Ownership and recovery
 
 `skills-lock.json` retains SDK schema version 2 and declaration-name keys. Its
-`repository` extension records canonical names, source binding, origins,
-provenance, complete notices, and exact published-tree hashes. Tree inventories
+`repository.version: 2` extension records canonical names, source binding,
+origins, provenance, complete notices, and exact published-tree hashes. Each
+installed receipt identifies an external or workspace owner. Workspace receipts
+bind an artifact to its package and build inputs. Tree inventories
 include directories, paths, raw file bytes, and executable bits. SDK hashes have
 a separate purpose and do not replace these ownership hashes.
 The extension also records the normalized manifest digest, control-file
@@ -201,7 +220,8 @@ content, changed files, missing skills, symlinks, and changed root license text
 block management without deleting that content. Executable-bit changes on the
 manifest, lock, or root LICENSE also block management.
 
-One repository lock serializes add, remove, sync, and list. Publication covers
+One repository lock serializes local artifact publication, add, remove, sync,
+and list. Publication covers
 `skills-sources.json`, `skills/`, `skills-lock.json`, and `LICENSE`. All four are
 rechecked after staging. A journal and backups record the old and new
 fingerprints before moves begin. This is sequential filesystem publication,
@@ -215,6 +235,11 @@ journal, and backups with a recovery path in the error. Inspect those files
 before retrying. An unreadable owner or a separately interrupted recovery claim
 requires inspection rather than automatic lock deletion.
 
+A stale local artifact can be removed only when its stored owner and exact
+current tree still match. An unknown path, modified artifact, or ownership
+collision blocks deletion. Do not delete `.skills-sync-*` recovery evidence to
+make a build proceed.
+
 ## Install into a consumer project
 
 Run the upstream installer from the project that consumes these skills.
@@ -224,7 +249,7 @@ cd /path/to/consumer-project
 npx skills add /path/to/this-repository --skill '*' --yes
 ```
 
-After publishing your repository, use its source locator instead.
+For a repository available through Git, use its source locator instead.
 
 ```sh
 npx skills add owner/repo --skill '*' --yes
@@ -237,20 +262,44 @@ from the project that consumes the skills.
 
 ```sh
 pnpm fmt:check
-bash -n skills.sh
-pnpm test
+pnpm limina:check
+pnpm build:ts
+pnpm validate:projects
+pnpm test:compiled --kind unit
+pnpm artifacts:build
+pnpm test:compiled --kind integration
+pnpm artifacts:check
+pnpm validate:distribution
+pnpm pack:check
 ```
 
-The tests invoke real CLI subprocesses and pinned `skills@1.8.1` with isolated Git
-and loopback HTTP fixtures. They exercise canonical collisions, notice
-centralization, preserving errors, deterministic sync, and interrupted
-publication. They do not require external network access or global Git changes.
+`limina:check` runs the named `governance` pipeline with `graph:check`,
+`source:check`, and `proof:check`. `build:ts` runs the TypeScript checker and
+emitter once through Limina's managed native `tsc -b` path. The later commands
+reuse compiled outputs. Unit tests run before assembly, and integration tests
+run against the assembled artifacts. `pack:check` inspects the npm pack
+whitelist without publishing a package.
 
-CI runs formatting, shell syntax, and tests. The sync workflow refreshes daily,
-on configuration changes, or through `workflow_dispatch`. It commits the
-manifest with the mirror, lock, and root license. It needs repository contents
-write access. Branch protection can require manual integration.
+The manager tests invoke real CLI subprocesses and pinned `skills@1.8.1` with
+isolated Git repositories and loopback HTTP fixtures. The root test runner
+selects current tests through the source Solution, so stale compiled test files
+do not become test inputs. Evaluation calls require an explicit external runner,
+model, and budget. They are excluded from normal CI. See the
+[evaluation API](docs/engineering/skills-monorepo.md#evaluation-api) for the
+runner protocol and report limits.
 
-The shell entry point enables Node's environment proxy support. Git operations
-use your existing authentication and proxy configuration. Keep credentials out
-of source locators.
+CI runs the full Linux baseline, Windows path and installation tests, and a
+Node.js 20 smoke render of the Linux-built standalone skill. The final Git
+guard rejects tracked changes, untracked files, and ignored unknown files under
+`skills/` and the managed control files.
+
+The external sync workflow runs daily or through `workflow_dispatch` on the
+default branch. It has `contents: read` permission and uploads a patch, status,
+and report for review. It does not commit, push, or bypass CI. New untracked
+files enter the patch, while ignored unknown paths fail the report step and
+remain listed for inspection. Apply reviewed updates locally and run the full
+checks before integrating them.
+
+`pnpm skills` enables Node's environment proxy support by default. Set
+`NODE_USE_ENV_PROXY=0` to opt out. Git operations use your existing
+authentication and proxy configuration. Keep credentials out of source locators.

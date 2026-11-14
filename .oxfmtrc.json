@@ -1,4 +1,12 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "ignorePatterns": ["skills/**", "my-skills/answer-me-with-html/scripts/am.mjs"]
+  "ignorePatterns": [
+    "skills/**",
+    "**/.build/**",
+    "**/.limina/**",
+    "reports/**",
+    "**/fixtures/**",
+    "packages/*/assets/**",
+    "packages/*/skill/**"
+  ]
 }

@@ -2,7 +2,7 @@
 
 Use this workflow when saved delivery mode is `vercel`. Create and preserve the editable local HTML first. Use local delivery for local-only or confidential output. [Vercel setup](vercel-setup.md)
 
-Each successful publication returns an immutable deployment URL. It includes the selected page and this publisher's previously published gallery. Production domains do not move. Old deployment URLs keep their previous content while Vercel retains those deployments. Preserve existing deployment protection.
+Each publication verifies an immutable deployment. With a delivery alias selected in setup, build from the current production gallery and promote the verified deployment. Without an alias, build from this publisher's archive and return the deployment URL. Preserve existing deployment protection.
 
 ## Review the outgoing page
 
@@ -28,9 +28,9 @@ If the source or attribution changes, run review again. Use `--replace` to chang
 
 ## Report deployment and access separately
 
-On success return `Published:` and `Editable source:`. `Published:` identifies the immutable deployment that passed authenticated byte comparison. Authentication by the publisher does not establish anonymous access or access for another reader.
+On success return `Published:` and `Editable source:`. Use the publisher's `Published:` URL, or `delivery.url` in JSON output. The URL uses the alias saved in setup when Vercel confirms it points to this deployment. If there is no selected alias or its binding cannot be confirmed, use the immutable deployment URL.
 
-A preferred origin is an independent observation. It can be protected, stale or unavailable. The publisher checks it without sending credentials or following a redirect into a login page. Never replace the verified deployment link with an unverified preferred origin. Do not disable protection or create a public bypass to make this check pass.
+The publisher checks alias access without following redirects. If the anonymous request cannot verify the page, it tries the authenticated Vercel CLI. If both checks fail, keep the confirmed alias as `Published:`, say that access through it could not be verified, and give the authenticated URL as `Verified Vercel deployment:`. Report when the delivered URL needs authentication. An older `Preferred link origin` setting only probes the domain and does not enable production publication.
 
 ```sh
 node "${CLAUDE_SKILL_DIR}/scripts/publish.mjs" verify --slug topic-name --json
@@ -50,7 +50,7 @@ The publisher saves a private candidate snapshot and journal before uploading. A
 node "${CLAUDE_SKILL_DIR}/scripts/publish.mjs" recover --json
 ```
 
-Recovery verifies retained bytes and the known remote deployment before completing the archive. It never deploys, promotes or changes access protection. A prepared operation that never attempted upload can be cleared safely. If the upload response was lost and no deployment is recorded, locate the actual candidate in the pinned Vercel project and provide its immutable HTTPS origin.
+Recovery verifies retained bytes and the known remote deployment before completing the archive. A journal for a selected alias also records the previous production deployment and whether a promotion was requested. If a prior promotion is unresolved, inspect its status in Vercel. Once the verified deployment and its alias are serving, run recovery again. If Vercel shows a definite failure, only promote the saved candidate after checking that production and the alias still point to the recorded baseline. Then run recovery to save the archive. A prepared operation that never attempted upload can be cleared safely. If the upload response was lost and no deployment is recorded, locate the actual candidate in the pinned Vercel project and provide its immutable HTTPS origin.
 
 ```sh
 node "${CLAUDE_SKILL_DIR}/scripts/publish.mjs" recover \
@@ -61,11 +61,11 @@ The helper checks the supplied deployment's project and content. Do not guess an
 
 ## Archive and legacy production
 
-The pending snapshot is `$AM_HOME/vercel-shared-pending`. The verified publication record is `$AM_HOME/vercel-shared-published.json`; its HTML files are in `$AM_HOME/vercel-shared-content`. The offline gallery remains `$AM_HOME/vercel-shared-site`. The default `AM_HOME` is `~/.answer-me-with-html`.
+The pending snapshot is `$AM_HOME/vercel-shared-pending`. The verified publication record is `$AM_HOME/vercel-shared-published.json`; its HTML files are in `$AM_HOME/vercel-shared-content`. The offline gallery remains `$AM_HOME/vercel-shared-site`. The default `AM_HOME` is `~/.agents/.answer-me-with-html`.
 
 For initial migration, a legacy record must identify the current production deployment and cover its gallery. A missing or stale legacy archive stops publication. After migration, the version 2 archive follows this publisher's immutable snapshots independently of production. Move the record and its HTML files together when moving the publisher. Different publishers can retain different gallery histories without overwriting production.
 
-The uploader uses `vercel deploy --prod --skip-domain`, checks the index, catalog and every page byte for byte, then saves the verified snapshot. It does not call `promote`. The local lock coordinates only the local archive. Recovery covers retained local evidence, not loss of the disk or removal of deployments by Vercel retention policies.
+The uploader uses `vercel deploy --prod --skip-domain` and checks the index, catalog and each page byte for byte. With a selected delivery alias, it rechecks production and the alias against the baseline before calling `vercel promote`. If either has changed, it returns the immutable URL and reports a conflict. Rerun publication to build from the new production gallery. The local lock coordinates this data directory. Keep a single publisher for the production project because a separate publisher can still race the last check and the promotion.
 
 ## Conversation provenance and ordering
 

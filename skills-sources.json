@@ -9,14 +9,6 @@
         "mode": "all",
         "exclude": []
       }
-    },
-    {
-      "id": "source-2",
-      "source": "./my-skills",
-      "selection": {
-        "mode": "all",
-        "exclude": []
-      }
     }
   ]
 }

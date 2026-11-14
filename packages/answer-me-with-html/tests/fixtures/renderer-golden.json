@@ -1,0 +1,107 @@
+{
+  "description": "Normalized document snapshots from the customized pre-migration runtime. Only executable script bodies and their CSP hash meta element are omitted. All CSS, fonts, markup, SVG, localization, source drafts and UI configuration remain in the digest. The video render date cell is normalized to [render date].",
+  "authoritySha256": "c5974db6b194082c7731e6721f13fcaadd57cd8eb2a8bb13b3b4f0f1f3fb9cac",
+  "samples": [
+    {
+      "name": "english",
+      "draft": "---\nlang: en\ntitle: A small page\n---\nIntro.\n\n## One\nUse **plain text** and `code`.\n",
+      "sha256": "4e10754c846807e5ded3d15c21d9e0be906fc3ed1339699ea99a1e68899698ba"
+    },
+    {
+      "name": "traditional-chinese",
+      "draft": "---\nlang: zh-Hant\ntemplate: doc\ntheme: paper\ntitle: 繁體頁面\n---\n## 說明\n先關閉閥門。\n",
+      "sha256": "433c1b979f1c0914aecd4bed573fc5dd940266e652fee4f8fd69ca6e356e5b36"
+    },
+    {
+      "name": "hebrew",
+      "draft": "---\nlang: he\ntitle: שלום\n---\n## בדיקה\nשלום עולם.\n",
+      "sha256": "1112674028bad7dbdbb2cb79bea8ae454f266af7550c4718f971e68c20f82849"
+    },
+    {
+      "name": "math-price-code",
+      "draft": "---\nlang: en\ntitle: Formula\n---\n## Math\nA price is $5. Use $x^2+y^2=z^2$.\n\n```js\nconst x = \"$HOME\";\n```\n",
+      "sha256": "d1f42c4210f886141402285aa61638acef66f600e35b87d82947dc85b2146f57"
+    },
+    {
+      "name": "table-and-html",
+      "draft": "---\nlang: en\ntitle: Table\n---\n## Rows\n| Name | Value |\n| --- | --- |\n| B | 2 |\n| A | 1 |\n\n<div onclick=\"bad()\"><strong>safe</strong><script>bad()</script></div>\n",
+      "sha256": "e689f16ad66eeadeaaa7452a15f4f0b0265af575f22be31daaf1ad811f73270a"
+    },
+    {
+      "name": "annot",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```annot\n# 1 Procedural sentence | 13 words, limit 20\nMake sure that [the hydraulic reservoir]{Technical name} is [full]{!Not \"replenished\"}.\n> Write one instruction per sentence\n```\n",
+      "sha256": "6e75495cc503d585bae8e0305e00713b3c5c3dfa73589d7f0a677fae63198c53"
+    },
+    {
+      "name": "api",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```api\nRPC users.UserService/GetUser\nrequest GetUserRequest\n  id string required\nresponse OK User\n  id string required\n  email string optional\nresponse NOT_FOUND\n```\n",
+      "sha256": "c40b816c68814f9edfd1406fb60fb4547e5110b6a043da7c883e533cbf2af74c"
+    },
+    {
+      "name": "ask",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```ask\nWhich cache do we use?\n* Redis | keeps data after a restart\n- Memcached | simpler, no disk\n```\n",
+      "sha256": "6e56731a44f37d34b792b4ab47875e01e408edfe04dc88eb0ef31b5167e46655"
+    },
+    {
+      "name": "callout",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```callout warn Caution\nClose the valve before you remove the pump.\n```\n",
+      "sha256": "d28fd26a95a04427e44d48aebb5608a40ef3cca37cf8aa803088ba92d14214fe"
+    },
+    {
+      "name": "chart",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```chart bar unit=ms\n       | p50 | p95\n* Redis     | 12  | 40\nMemcached   | 9   | 31\nPostgres    | 28  | 95\n```\n",
+      "sha256": "01507b731af1e9882d57d148acbde90019b7b1b69d326a709896f8e43c7e28d5"
+    },
+    {
+      "name": "class",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```class LR\ninterface Store\n  +find(id: string): User\nclass UserStore\n  -users: User[]\n  +find(id: string): User\nUserStore ..|> Store: implements\n```\n",
+      "sha256": "68733a9d8d143af85466e20da70417a3e7cacf80981610ab400fd614eafe9b54"
+    },
+    {
+      "name": "er",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```er LR\n*User\n  id PK\n  email string UK\nOrder\n  id PK\n  user_id FK -> User\nUser 1--* Order: places\n```\n",
+      "sha256": "46cf58696fd0f429ac757a25b06ca44dedf967e410422d9a0d71a17f8a0a622d"
+    },
+    {
+      "name": "flow",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```flow LR\n(User) -> Gateway: HTTPS\nGateway -> Auth & *Service\nService -> [(Database)]\ngroup Backend: Auth, Service\n```\n",
+      "sha256": "6345760abbd739de41ad88603e9872a604870a2429795d777840c6c263a71f48"
+    },
+    {
+      "name": "kv",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```kv cols=2\n* Title: Simplified Technical English\nSpecification: ASD-STE100\nOwner: ASD\n```\n",
+      "sha256": "1fc1b7c500dcf3ac7b21839a0555ca5c7b0e4e4021f4734a2a7b9982d31cba9e"
+    },
+    {
+      "name": "limits",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```limits\nProcedural sentence | 13 / 20 | words\nDescriptive sentence | max 25 | words\nNoun cluster | 4 / 3 | words | over\n```\n",
+      "sha256": "137516aef87253156974acdcba788f6342f82953ac2ae7138c167c0956be40db"
+    },
+    {
+      "name": "sequence",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```sequence\nClient -> Server: SYN\nServer --> Client: SYN-ACK\nClient -> Server: ACK\nnote Client, Server: ESTABLISHED\n```\n",
+      "sha256": "3833aee443ff5f79853825bc72aea124195914727bbed728baa86022249a042d"
+    },
+    {
+      "name": "state",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```state LR\n[*] -> Idle\nIdle -> Connecting: connect()\nConnecting -> Open: SYN-ACK\nConnecting -> Closed: RST\nOpen -> Open: retransmit\nOpen -> Closed: close()\nClosed -> [*]\n```\n",
+      "sha256": "34e81f080f7980ab03fe3f260789c286cb089ebb702c741cfc45eac1ace735f2"
+    },
+    {
+      "name": "timeline",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```timeline\n1979 | AECMA starts the study\n1986 | First guide published\n*Now | Free download | Maintained by ASD STEMG\n```\n",
+      "sha256": "f4791638105a585edb4c66395c7d0fa3e8e4aa42efb0bf21a88863699afeca48"
+    },
+    {
+      "name": "tree",
+      "draft": "---\nlang: en\ntitle: Diagram\n---\n## Example\n```tree\nASD-STE100 | Simplified Technical English\n  Part 1: Writing rules\n    `Section 1` Words\n  Part 2: Dictionary\n    Approved words | one word, one meaning\n```\n",
+      "sha256": "eb1b09d3465bd527f5160ff6e9077ba0c9a768f7301ff3d2ed238ea0f607b3db"
+    },
+    {
+      "name": "video-scene",
+      "command": "video",
+      "draft": "---\nlang: en\ntitle: Motion\nsubtitle: A short scene\n---\n## One\n```flow\nFirst -> Next\n```\n> This is the first scene.\n",
+      "sha256": "584055d85efaab7390e5668c9771cbc0f40774635ca6d7e092e17afeb8cb3024"
+    }
+  ]
+}

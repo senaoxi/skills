@@ -1,0 +1,14 @@
+{
+  "extends": "../../../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "types": []
+  },
+  "include": ["**/*.mts"],
+  "liminaOptions": {
+    "outputs": {
+      "rootDir": ".",
+      "outDir": "../../.build/src/shared"
+    }
+  }
+}

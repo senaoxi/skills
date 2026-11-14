@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./scripts/tsconfig.json"
+    },
+    {
+      "path": "./tests/tsconfig.json"
+    },
+    {
+      "path": "./config/tsconfig.json"
+    },
+    {
+      "path": "./packages/answer-me-with-html/tsconfig.json"
+    }
+  ]
+}

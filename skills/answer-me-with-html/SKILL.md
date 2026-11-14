@@ -43,8 +43,8 @@ AM_EOF
 ````
 
 3. Use `✓ <path>` as the rendered path. For a draft error, fix the reported lines and rerun. When the CLI prints `draft: <path>`, edit and rerender that file so the line numbers stay aligned. For STE warnings, retry up to twice and report any remaining warnings. After a successful render, use `--replace <previous path>` for an auto-named page, or reuse the same `-o` path, when retrying.
-4. **Deliver locally by default.** Return the file directly for a local-only request or a delegated page. Otherwise run `node "${CLAUDE_SKILL_DIR}/scripts/publish.mjs" status` after rendering. For `local`, `uninitialized`, or a settings error, deliver the local file. When the saved mode is `vercel`, follow the [Vercel publishing guide](references/vercel-shared.md). Review the exact outgoing page and pass its digest before upload. Vercel delivery returns an immutable gallery snapshot and leaves production domains unchanged.
-5. Reply with the conclusion and the page link. On publication success include the `Published:` link and the local `Editable source:` link. On fallback include the local file and the remote and archive states. An unknown upload or pending archive requires recovery, even when a local file is available. Keep the existing access protection and state any access limitation. If the page contains decisions, point the user to the page's Reply button. If using a host choice prompt, include the page link in that prompt.
+4. **Deliver locally by default.** Return the file directly for a local-only request or a delegated page. Otherwise run `node "${CLAUDE_SKILL_DIR}/scripts/publish.mjs" status` after rendering. For `local`, `uninitialized`, or a settings error, deliver the local file. When the saved mode is `vercel`, follow the [Vercel publishing guide](references/vercel-shared.md) to review, publish, and report the page.
+5. Reply with the conclusion and the page link. On publication success use the publisher's `Published:` URL and include the local `Editable source:` link. On fallback include the local file and the remote and archive states. An unknown upload or pending archive requires recovery, even when a local file is available. Keep the existing access protection and state any access limitation. If the page contains decisions, point the user to the page's Reply button. If using a host choice prompt, include the page link in that prompt.
 
 For local delivery, use the host's file link format. In Codex and DeepSeek Harness, link to the absolute path, for example `[Open HTML](</absolute path/answer.html>)`. Use the host preview tool when available and requested. For local-only or confidential output, link directly to the file. The CLI's `link:` URL is an optional preview when the user's `am serve` is already running and the requested access permits it.
 
@@ -59,7 +59,7 @@ New content
 AM_EOF
 ```
 
-If the user asks to update the online page, use the same slug and `--replace` through the publishing guide. Review the new bytes and return the new deployment URL. Previous deployment URLs and production domains retain their previous content. The online copy omits the embedded draft.
+If the user asks to update the online page, use the same slug and `--replace` through the publishing guide. Review the new bytes and return the new `Published:` URL. Previous immutable deployment URLs keep their previous content. The online copy omits the embedded draft.
 
 ## 3. Draft format quick reference
 

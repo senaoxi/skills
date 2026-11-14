@@ -1,0 +1,40 @@
+{
+  "name": "@senaoxi/skill-answer-me-with-html",
+  "version": "0.0.0",
+  "private": true,
+  "license": "SEE LICENSE IN skill/LICENSE",
+  "type": "module",
+  "scripts": {
+    "artifact:prepare": "node .build/scripts/assemble.mjs",
+    "build": "pnpm -w run skill answer-me-with-html build",
+    "test": "pnpm -w run skill answer-me-with-html test",
+    "eval": "pnpm -w run skill answer-me-with-html eval"
+  },
+  "dependencies": {
+    "@dagrejs/dagre": "3.1.3",
+    "marked": "18.1.2",
+    "temml": "0.14.0"
+  },
+  "devDependencies": {
+    "@fontsource/bangers": "5.3.0",
+    "@types/node": "^20.0.0",
+    "esbuild": "0.28.2",
+    "yaml": "2.9.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "skillBuild": {
+    "name": "answer-me-with-html",
+    "resources": [
+      "scripts/am.mjs",
+      "scripts/publish.mjs",
+      "scripts/publish-html.mjs",
+      "references/video.md",
+      "references/settings.md",
+      "references/vercel-shared.md",
+      "references/vercel-setup.md",
+      "NOTICE"
+    ]
+  }
+}

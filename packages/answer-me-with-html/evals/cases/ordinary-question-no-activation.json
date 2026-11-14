@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "ordinary-question-no-activation",
+  "category": "ordinary-question",
+  "prompt": "用三句话解释 JavaScript 的闭包，并给一个简短代码例子。",
+  "context": {
+    "cwd": "/eval/workspace",
+    "home": "/eval/home",
+    "environment": {
+      "node": {
+        "available": true,
+        "version": "20.20.0"
+      },
+      "browser": {
+        "available": true
+      },
+      "vercel": {
+        "available": false
+      },
+      "deliveryMode": "uninitialized"
+    },
+    "instructions": [
+      "Install the assembled skill under the runner-provided skillDirectory and use its exact scripts directory.",
+      "Materialize fixtures only in the declared workspace or home scope.",
+      "Network publishing is forbidden for this case."
+    ],
+    "processEnvironment": {
+      "AM_HOME": "/eval/home/.agents/.answer-me-with-html"
+    }
+  },
+  "fixtures": [],
+  "expected": {
+    "activation": false,
+    "artifact": "none",
+    "delivery": "chat",
+    "publishing": "forbidden",
+    "required": [
+      "Answer the ordinary question directly in chat in the requested language.",
+      "Provide the short explanation and code example without an artifact workflow."
+    ],
+    "forbidden": [
+      "Do not activate answer-me-with-html.",
+      "Do not invoke am.mjs, publish.mjs, preview tools, or artifact-generation tools.",
+      "Do not create or link an HTML file."
+    ],
+    "preservedData": []
+  },
+  "rubric": [
+    {
+      "id": "no-implicit-activation",
+      "severity": "must",
+      "criterion": "A normal question does not activate this explicit-only skill."
+    },
+    {
+      "id": "requested-format",
+      "severity": "must",
+      "criterion": "The response remains a concise chat explanation with a code example."
+    }
+  ]
+}

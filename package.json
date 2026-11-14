@@ -1,21 +1,45 @@
 {
-  "name": "skills",
+  "name": "@senaoxi/skills",
+  "version": "0.0.0",
   "private": true,
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
+  "files": [
+    "skills/",
+    "README.md",
+    "LICENSE"
+  ],
   "type": "module",
   "scripts": {
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "skills": "bash skills.sh",
-    "test": "node --test tests/skills.test.mjs"
+    "skills": "pnpm build:tools && node .build/scripts/cli.mjs",
+    "test": "pnpm build:ts && pnpm test:compiled",
+    "limina:check": "limina check governance",
+    "build:ts": "node -e \"const fs=require('node:fs');fs.rmSync('.build/toolchain/compile-receipt.json',{force:true});fs.rmSync('.limina/tsbuildinfo/build',{recursive:true,force:true})\" && limina build tsconfig.json --preset tsc && node .build/scripts/record-build.mjs",
+    "build:tools": "limina build scripts/tsconfig.json --preset tsc",
+    "build": "pnpm limina:check && pnpm build:ts && pnpm validate:projects && pnpm artifacts:build",
+    "artifacts:build": "node .build/scripts/build-skills.mjs",
+    "artifacts:check": "node .build/scripts/build-skills.mjs --check",
+    "validate:projects": "node .build/scripts/validate-projects.mjs",
+    "validate:distribution": "node .build/scripts/validate-distribution.mjs",
+    "test:compiled": "node .build/scripts/run-tests.mjs",
+    "eval": "pnpm build:ts && pnpm eval:compiled",
+    "eval:compiled": "node .build/scripts/run-evals.mjs",
+    "pack:check": "node .build/scripts/check-pack.mjs",
+    "skill": "pnpm build:ts && node .build/scripts/skill-task.mjs",
+    "clean": "pnpm build:tools && node .build/scripts/clean.mjs"
   },
   "devDependencies": {
+    "@types/node": "^24.0.0",
     "ignore": "7.0.14",
+    "limina": "0.5.0",
     "oxfmt": "0.78.0",
-    "skills": "1.8.1"
+    "skills": "1.8.1",
+    "typescript": "6.0.3",
+    "yaml": "2.9.1"
   },
   "engines": {
-    "node": ">=24"
+    "node": "^24.15.0 || >=26.0.0"
   },
   "packageManager": "pnpm@12.18.0"
 }

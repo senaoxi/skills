@@ -1,3 +1,9 @@
 node_modules/
 .agents/
 .skills-sync-*/
+.build/
+.limina/
+.liminainfo
+.liminainfo.*
+*.tsbuildinfo
+/reports/

@@ -1,0 +1,26 @@
+* text=auto eol=lf
+
+# Ownership hashes describe the exact installed bytes on every platform.
+skills/** -text
+
+# Preserve supplied legal text, including BOM and CRLF bytes.
+LICENSE -text
+**/[Ll][Ii][Cc][Ee][Nn][Ss][Ee]* -text
+**/[Ll][Ii][Cc][Ee][Nn][Cc][Ee]* -text
+**/[Cc][Oo][Pp][Yy][Ii][Nn][Gg]* -text
+**/[Nn][Oo][Tt][Ii][Cc][Ee]* -text
+**/[Ll][Ii][Cc][Ee][Nn][Ss][Ee][Ss]/** -text
+**/[Ll][Ii][Cc][Ee][Nn][Cc][Ee][Ss]/** -text
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.webm binary
+*.mp4 binary

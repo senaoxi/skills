@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "explicit-html-activation",
+  "category": "explicit-activation",
+  "prompt": "请使用 answer-me-with-html，把队列消费者的重试流程解释成一页 HTML。已知流程只有：收到消息、执行任务、成功后确认；失败后最多重试 2 次，仍失败则进入失败队列。请只给本地文件。",
+  "context": {
+    "cwd": "/eval/workspace",
+    "home": "/eval/home",
+    "environment": {
+      "node": {
+        "available": true,
+        "version": "20.20.0"
+      },
+      "browser": {
+        "available": true
+      },
+      "vercel": {
+        "available": false
+      },
+      "deliveryMode": "uninitialized"
+    },
+    "instructions": [
+      "Install the assembled skill under the runner-provided skillDirectory and use its exact scripts directory.",
+      "Materialize fixtures only in the declared workspace or home scope.",
+      "Network publishing is forbidden for this case."
+    ],
+    "processEnvironment": {
+      "AM_HOME": "/eval/home/.agents/.answer-me-with-html"
+    }
+  },
+  "fixtures": [],
+  "expected": {
+    "activation": true,
+    "artifact": "html",
+    "delivery": "local",
+    "publishing": "forbidden",
+    "required": [
+      "Use the explicitly requested skill and bundled am.mjs renderer.",
+      "Put the conclusion first and express the supplied retry flow with a supported component.",
+      "Return the actual successful renderer path as an absolute local file link.",
+      "Use Node 20 or newer without installing runtime npm dependencies."
+    ],
+    "forbidden": [
+      "Do not fabricate a successful render, file path, screenshot, or published URL.",
+      "Do not run publisher commands or access external delivery services.",
+      "Do not add unsupported retry delays, guarantees, or operational measurements."
+    ],
+    "preservedData": []
+  },
+  "rubric": [
+    {
+      "id": "activation",
+      "severity": "must",
+      "criterion": "The explicit skill request activates answer-me-with-html."
+    },
+    {
+      "id": "render-evidence",
+      "severity": "must",
+      "criterion": "A real successful renderer command produces the linked HTML file."
+    },
+    {
+      "id": "flow-fidelity",
+      "severity": "must",
+      "criterion": "The diagram includes at most two retries and a failure queue without invented behavior."
+    },
+    {
+      "id": "local-delivery",
+      "severity": "must",
+      "criterion": "The final answer links the generated local HTML and makes no publication claim."
+    }
+  ]
+}

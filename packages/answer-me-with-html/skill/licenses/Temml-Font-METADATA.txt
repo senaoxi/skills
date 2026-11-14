@@ -1,0 +1,20 @@
+Embedded name-table notices from temml 0.14.0 dist/Temml.woff2
+
+The bundled font bytes remain unchanged from the authoritative renderer.
+The font describes itself as a clone of KaTeX_Script-Regular with remapped
+Unicode code points (see Temml-Local.css). In addition to the distributed
+MIT notices, its name table contains the following text verbatim:
+
+name ID 0 (copyright):
+Copyright (c) 2009-2010 Design Science, Inc.
+Copyright (c) 2014-2018 Khan Academy, Copyright (c) 2021 Ron Kok
+
+name ID 13 (license description):
+This font is made with the home edition of FontCreator. You may not use this font for commercial purposes.
+
+name ID 14 (license information URL):
+https://www.high-logic.com/font-license-agreement
+
+These embedded notices are preserved alongside the supplied project licenses.
+Their applicability relative to the upstream MIT notices has not been resolved
+by this source migration.

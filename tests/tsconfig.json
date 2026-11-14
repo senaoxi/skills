@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"]
+  },
+  "include": ["**/*.mts"],
+  "liminaOptions": {
+    "outputs": {
+      "rootDir": ".",
+      "outDir": "../.build/tests",
+      "target": "ES2022",
+      "declarationMap": false
+    }
+  }
+}

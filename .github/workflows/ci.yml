@@ -8,18 +8,178 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  check:
+  linux:
+    name: Linux baseline / Node 24.15
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      AM_E2E: "1"
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
-          cache: pnpm
+          node-version: "24.15.0"
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+          cache: true
 
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm fmt:check
-      - run: bash -n skills.sh
-      - run: pnpm test
+      - name: Install the locked workspace
+        run: pnpm install --frozen-lockfile
+      - name: Check formatting
+        run: pnpm fmt:check
+      - name: Check graph, source, and proof governance
+        run: pnpm limina:check
+      - name: Compile with the native managed TypeScript build
+        run: pnpm build:ts
+      - name: Validate project ownership and runtime boundaries
+        run: pnpm validate:projects
+      - name: Require Chrome for browser integration tests
+        shell: bash
+        run: |
+          chrome_path="$(command -v google-chrome || command -v chromium || command -v chromium-browser)"
+          test -n "$chrome_path"
+          printf 'AM_CHROME=%s\n' "$chrome_path" >> "$GITHUB_ENV"
+      - name: Run compiled unit tests before assembly
+        run: pnpm test:compiled --kind unit
+      - name: Assemble skill artifacts
+        run: pnpm artifacts:build
+      - name: Run compiled integration tests against the artifacts
+        run: pnpm test:compiled --kind integration
+      - name: Check artifact consistency
+        run: pnpm artifacts:check
+      - name: Validate standalone distributions
+        run: pnpm validate:distribution
+      - name: Check the npm pack whitelist
+        run: pnpm pack:check
+      - name: Reject tracked, untracked, and ignored artifact drift
+        shell: bash
+        run: |
+          changes="$(git status --porcelain=v1 --untracked-files=all --ignored=matching -- skills skills-sources.json skills-lock.json LICENSE)"
+          if test -n "$changes"; then
+            printf '%s\n' "$changes"
+            printf '%s\n' 'Managed artifacts differ from the checkout. Rebuild and review them locally.'
+            exit 1
+          fi
+      - name: Archive the standalone skill for Node 20
+        shell: bash
+        run: tar -czf "$RUNNER_TEMP/answer-me-with-html.tar.gz" -C skills answer-me-with-html
+      - uses: actions/upload-artifact@v4
+        with:
+          name: answer-me-with-html-runtime
+          path: ${{ runner.temp }}/answer-me-with-html.tar.gz
+          if-no-files-found: error
+          retention-days: 7
+
+  windows:
+    name: Windows paths and installation / Node 24.15
+    needs: linux
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.15.0"
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+          cache: true
+
+      - name: Install the locked workspace
+        run: pnpm install --frozen-lockfile
+      - uses: actions/download-artifact@v4
+        with:
+          name: answer-me-with-html-runtime
+          path: ${{ runner.temp }}/skills install source 空间
+      - name: Install and render through paths with spaces and Unicode
+        shell: bash
+        run: |
+          node --input-type=module <<'JAVASCRIPT'
+          import assert from 'node:assert/strict';
+          import { spawnSync } from 'node:child_process';
+          import { mkdir, readFile, stat } from 'node:fs/promises';
+          import { join, resolve } from 'node:path';
+          import { installSkills, resolveSource } from 'skills';
+
+          const sourceDirectory = join(process.env.RUNNER_TEMP, 'skills install source 空间');
+          const extracted = spawnSync('tar', ['-xzf', join(sourceDirectory, 'answer-me-with-html.tar.gz'), '-C', sourceDirectory], { encoding: 'utf8' });
+          assert.equal(extracted.status, 0, extracted.error?.message ?? extracted.stderr);
+          const source = await resolveSource(join(sourceDirectory, 'answer-me-with-html'), { config: { telemetry: false } });
+          try {
+            for (const name of ['consumer with spaces', '用户目录']) {
+              const consumer = join(process.env.RUNNER_TEMP, name);
+              await mkdir(consumer, { recursive: true });
+              const installed = await installSkills(source, {
+                cwd: consumer, scope: 'project', agents: ['universal'],
+                skills: ['answer-me-with-html'], mode: 'copy',
+                duplicates: 'error', symlinks: 'reject', config: { telemetry: false },
+              });
+              assert.equal(installed.failed.length, 0, JSON.stringify(installed));
+              assert.equal(installed.skipped.length, 0, JSON.stringify(installed));
+              assert.equal(installed.installed.length, 1, JSON.stringify(installed));
+              const skill = resolve(installed.installed[0].path);
+              assert.equal(skill, resolve(consumer, '.agents/skills/answer-me-with-html'));
+              for (const file of ['SKILL.md', 'NOTICE', 'scripts/am.mjs', 'scripts/publish.mjs']) {
+                assert.ok((await stat(join(skill, file))).isFile(), file);
+              }
+              const output = join(consumer, 'answer with spaces.html');
+              const rendered = spawnSync(process.execPath, [join(skill, 'scripts/am.mjs'), 'render', '-', '--no-open', '-o', output], {
+                cwd: consumer, encoding: 'utf8', timeout: 60_000,
+                env: { ...process.env, NODE_PATH: '' },
+                input: '---\ntitle: Windows path smoke\n---\n## A Installed skill\nRender through a consumer path.\n',
+              });
+              assert.equal(rendered.status, 0, rendered.error?.message ?? `${rendered.stdout}\n${rendered.stderr}`);
+              assert.match(await readFile(output, 'utf8'), /Windows path smoke/);
+              console.log(`Installed and rendered: ${consumer}`);
+            }
+          } finally {
+            await source.dispose();
+          }
+          JAVASCRIPT
+      - name: Reject tracked, untracked, and ignored artifact drift
+        shell: bash
+        run: |
+          changes="$(git status --porcelain=v1 --untracked-files=all --ignored=matching -- skills skills-sources.json skills-lock.json LICENSE)"
+          if test -n "$changes"; then
+            printf '%s\n' "$changes"
+            printf '%s\n' 'Managed artifacts differ from the checkout. Rebuild and review them locally.'
+            exit 1
+          fi
+
+  runtime20:
+    name: Standalone runtime / Node 20
+    needs: linux
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: actions/download-artifact@v4
+        with:
+          name: answer-me-with-html-runtime
+          path: ${{ runner.temp }}/skills-runtime20
+      - name: Render with the assembled skill and no workspace dependencies
+        shell: bash
+        run: |
+          cd "$RUNNER_TEMP/skills-runtime20"
+          tar -xzf answer-me-with-html.tar.gz
+          node answer-me-with-html/scripts/am.mjs help
+          node answer-me-with-html/scripts/am.mjs render - --no-open -o "$RUNNER_TEMP/skills-runtime20/smoke.html" <<'MARKDOWN'
+          ---
+          title: Node 20 runtime
+          ---
+          ## A Standalone render
+          This page was rendered from the assembled skill.
+          MARKDOWN
+          test -s "$RUNNER_TEMP/skills-runtime20/smoke.html"
