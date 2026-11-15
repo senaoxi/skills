@@ -31,72 +31,21 @@ jobs:
 
       - name: Install the locked workspace
         run: pnpm install --frozen-lockfile
-      - name: Compile the tools once
-        run: pnpm build:ts
       - name: Fetch configured external skills
         id: sync
         shell: bash
         run: |
-          node .build/scripts/cli.mjs sync 2>&1 | tee "$RUNNER_TEMP/skills-sync.log"
+          node scripts/cli.ts sync 2>&1 | tee "$RUNNER_TEMP/skills-sync.log"
       - name: Check the updated distribution
         id: distribution
-        run: pnpm validate:distribution
+        run: node scripts/validate-distribution.ts
       - name: Capture a review patch and report
         if: always()
         shell: bash
         env:
           SYNC_OUTCOME: ${{ steps.sync.outcome }}
           DISTRIBUTION_OUTCOME: ${{ steps.distribution.outcome }}
-        run: |
-          node --input-type=module <<'JAVASCRIPT'
-          import { spawnSync } from 'node:child_process';
-          import { appendFileSync, copyFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
-          import { join } from 'node:path';
-
-          const output = join(process.env.RUNNER_TEMP, 'skills-sync-report');
-          mkdirSync(output, { recursive: true });
-          const paths = ['skills', 'skills-sources.json', 'skills-lock.json', 'LICENSE'];
-          function git(args, allowed = [0]) {
-            const result = spawnSync('git', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
-            if (result.error || !allowed.includes(result.status)) {
-              throw new Error(result.error?.message ?? (result.stderr || `git exited ${result.status}`));
-            }
-            return result.stdout;
-          }
-          function entries(args) {
-            return git(args).split('\0').filter(Boolean);
-          }
-          const untracked = entries(['ls-files', '--others', '--exclude-standard', '-z', '--', ...paths]);
-          const ignored = entries(['ls-files', '--others', '--ignored', '--exclude-standard', '-z', '--', ...paths]);
-          let patch = git(['diff', '--binary', '--full-index', 'HEAD', '--', ...paths]);
-          for (const path of untracked) {
-            patch += git(['diff', '--no-index', '--binary', '--full-index', '--', '/dev/null', path], [0, 1]);
-          }
-          writeFileSync(join(output, 'skills-sync.patch'), patch);
-          writeFileSync(join(output, 'status.txt'), git(['status', '--short', '--untracked-files=all', '--ignored=matching', '--', ...paths]));
-          const report = {
-            repository: process.env.GITHUB_REPOSITORY,
-            revision: process.env.GITHUB_SHA,
-            sync: process.env.SYNC_OUTCOME,
-            distribution: process.env.DISTRIBUTION_OUTCOME,
-            trackedChanges: entries(['diff', '--name-only', '-z', 'HEAD', '--', ...paths]),
-            untracked,
-            ignored,
-            patch: 'skills-sync.patch',
-            review: 'Review the patch, source provenance, and complete license notices before applying. Ignored paths require inspection and are excluded from the patch.',
-          };
-          writeFileSync(join(output, 'report.json'), JSON.stringify(report, null, 2) + '\n');
-          const log = join(process.env.RUNNER_TEMP, 'skills-sync.log');
-          if (existsSync(log)) copyFileSync(log, join(output, 'sync.log'));
-          appendFileSync(process.env.GITHUB_STEP_SUMMARY,
-            `External skill sync: ${report.sync}. Distribution: ${report.distribution}.\n\n` +
-            `Tracked changes: ${report.trackedChanges.length}. New paths: ${untracked.length}. Ignored paths: ${ignored.length}.\n\n` +
-            'Download skills-sync-report to review the patch and provenance. No repository changes are committed or pushed.\n');
-          if (ignored.length) {
-            console.error('Ignored files exist inside the managed artifacts. Inspect the report before integration.');
-            process.exitCode = 1;
-          }
-          JAVASCRIPT
+        run: node scripts/report-skill-sync.ts
       - name: Upload the review patch and report
         if: always()
         uses: actions/upload-artifact@v4

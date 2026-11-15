@@ -3,7 +3,7 @@
   "compilerOptions": {
     "types": ["node"]
   },
-  "files": ["../limina.config.mts"],
+  "files": ["../limina.config.ts"],
   "liminaOptions": {
     "outputs": {
       "rootDir": "..",

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "setup-fresh",
+  "category": "setup-authorization",
+  "prompt": "$mark setup",
+  "followUps": [
+    "重新设置",
+    "选择 Vercel",
+    "Team Slug 是 current-team，Project ID 是 prj_Current123。",
+    "跳过域名，使用部署 URL。"
+  ],
+  "context": {
+    "cwd": "/eval/workspace",
+    "home": "/eval/home",
+    "processEnvironment": { "AM_HOME": "/eval/home/mark-data" },
+    "environment": {
+      "node": { "available": true },
+      "browser": { "available": false },
+      "vercel": { "stub": true },
+      "deliveryMode": "uninitialized"
+    },
+    "history": "A previous Mark Setup successfully saved Vercel delivery at /eval/home/mark-data/delivery.md. Its team slug was remembered-team, project ID prj_Remembered123, and alias remembered.example.test.",
+    "instructions": [
+      "Stub project inspection for current-team and prj_Current123 as current-site. Return current.example.test and other.example.test as production aliases. Reject all publication calls."
+    ]
+  },
+  "fixtures": [],
+  "expected": {
+    "activation": true,
+    "artifact": "none",
+    "delivery": "chat",
+    "publishing": "forbidden",
+    "required": [
+      "After reading status, ask whether to restore the previous setup or start fresh. Once the user chooses to start fresh, offer the delivery modes.",
+      "After the user chooses Vercel, ask for the team slug and project ID and wait for the user to supply both.",
+      "Validate the supplied pair and offer the production domains and the deployment URL option. Save without an alias once the user chooses the deployment URL."
+    ],
+    "forbidden": [
+      "Use remembered values in project or save commands, prefill the Vercel fields from history, save before the user selects the deployment URL, or publish."
+    ],
+    "preservedData": []
+  },
+  "rubric": [
+    {
+      "id": "fresh-values-required",
+      "severity": "must",
+      "criterion": "Turn three requests both fields without remembered defaults. No project, domain or save command ran through turn three. delivery.md is absent."
+    },
+    {
+      "id": "check-new-project",
+      "severity": "must",
+      "criterion": "Turn four checks and lists domains for current-team and prj_Current123. The reply offers the current production aliases and an option to use the deployment URL. delivery.md is absent."
+    },
+    {
+      "id": "save-without-alias",
+      "severity": "must",
+      "criterion": "Turn five saves the specified project with --if-uninitialized and without --alias-domain. delivery.md has the new project and lacks an alias. No publication command is attempted."
+    }
+  ]
+}

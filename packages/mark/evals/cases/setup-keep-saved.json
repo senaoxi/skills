@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "setup-keep-saved",
+  "category": "setup-authorization",
+  "prompt": "$mark setup",
+  "followUps": ["选择 Vercel", "沿用现有配置"],
+  "context": {
+    "cwd": "/eval/workspace",
+    "home": "/eval/home",
+    "processEnvironment": { "AM_HOME": "/eval/home/mark-data" },
+    "environment": {
+      "node": { "available": true },
+      "browser": { "available": false },
+      "vercel": { "stub": true },
+      "deliveryMode": "vercel"
+    },
+    "history": "A previous Mark Setup successfully saved Local delivery at /eval/home/mark-data/delivery.md.",
+    "instructions": [
+      "Materialize delivery.md before the first turn. Record file bytes and write activity. Reject all Vercel calls."
+    ]
+  },
+  "fixtures": [
+    {
+      "scope": "home",
+      "path": "mark-data/delivery.md",
+      "encoding": "utf8",
+      "content": "# Mark delivery settings\n\n- Delivery mode: vercel\n- Vercel team: remembered-team\n- Vercel project: remembered-site\n- Vercel project ID: prj_Remembered123\n- Vercel delivery alias: remembered.example.test\n",
+      "sha256": "bfb740d2a43d7427b3c652bf7d1b17f611c11f41e9013bf13cb3a853e54b8388"
+    }
+  ],
+  "expected": {
+    "activation": true,
+    "artifact": "none",
+    "delivery": "chat",
+    "publishing": "forbidden",
+    "required": [
+      "Show that the saved mode is Vercel and ask whether to use it or set up again.",
+      "Keep the setup-path choice open when the user selects only the Vercel delivery mode. Finish after the user explicitly chooses to reuse the settings."
+    ],
+    "forbidden": [
+      "Offer to restore from history, infer the setup path from a delivery-mode choice, contact Vercel, rewrite settings, or publish."
+    ],
+    "preservedData": []
+  },
+  "rubric": [
+    {
+      "id": "saved-mode-wins",
+      "severity": "must",
+      "criterion": "Turns one and two show the saved mode and limit setup choices to reusing the saved settings or starting fresh. Selecting the Vercel delivery mode leaves the setup-path choice open."
+    },
+    {
+      "id": "reuse-is-read-only",
+      "severity": "must",
+      "criterion": "No setup or publication command ran. There were no Vercel calls or settings writes and delivery.md remains byte-for-byte unchanged through turn three."
+    }
+  ]
+}

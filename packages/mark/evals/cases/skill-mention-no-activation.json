@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "skill-mention-no-activation",
+  "category": "ordinary-question",
+  "prompt": "我在审查一个 SKILL.md，里面写着 mark 只能被显式调用。请解释这条规则的含义，用普通文本回答，不要运行或演示这个 skill。",
+  "context": {
+    "cwd": "/eval/workspace",
+    "home": "/eval/home",
+    "environment": {
+      "node": {
+        "available": true,
+        "version": "20.20.0"
+      },
+      "browser": {
+        "available": true
+      },
+      "vercel": {
+        "available": false
+      },
+      "deliveryMode": "uninitialized"
+    },
+    "instructions": [
+      "Install the assembled skill under the runner-provided skillDirectory and use its exact scripts directory.",
+      "Materialize fixtures only in the declared workspace or home scope.",
+      "Network publishing is forbidden for this case."
+    ],
+    "processEnvironment": {
+      "AM_HOME": "/eval/home/.agents/.mark"
+    }
+  },
+  "fixtures": [],
+  "expected": {
+    "activation": false,
+    "artifact": "none",
+    "delivery": "chat",
+    "publishing": "forbidden",
+    "required": [
+      "Explain that mentioning a skill during review does not invoke it.",
+      "Honor the ordinary-text format and the explicit no-execution instruction."
+    ],
+    "forbidden": [
+      "Do not treat the name mark in this review request as invocation.",
+      "Do not render, publish, or preview any artifact."
+    ],
+    "preservedData": []
+  },
+  "rubric": [
+    {
+      "id": "mention-is-data",
+      "severity": "must",
+      "criterion": "A review mention of the skill remains subject matter rather than activation."
+    },
+    {
+      "id": "no-execution",
+      "severity": "must",
+      "criterion": "No renderer, publisher, or preview command runs."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "@senaoxi/skill-mark",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "artifact:prepare": "node scripts/assemble.ts",
+    "build": "pnpm -w run skill mark build",
+    "test": "pnpm -w run skill mark test",
+    "eval": "pnpm -w run skill mark eval"
+  },
+  "devDependencies": {
+    "@dagrejs/dagre": "3.1.3",
+    "@fontsource/bangers": "5.3.0",
+    "@types/node": "^20.0.0",
+    "marked": "18.1.2",
+    "rolldown": "1.3.2",
+    "temml": "0.14.0",
+    "yaml": "2.9.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "skillBuild": {
+    "name": "mark",
+    "resources": [
+      "scripts/am.mjs",
+      "scripts/publish.mjs",
+      "scripts/publish-html.mjs",
+      "scripts/chatgpt.mjs",
+      "references/video.md",
+      "references/settings.md",
+      "references/vercel-shared.md",
+      "references/vercel-setup.md",
+      "references/chatgpt-archive.md",
+      "references/chatgpt-host-context.md",
+      "LICENSE",
+      "NOTICE"
+    ]
+  }
+}

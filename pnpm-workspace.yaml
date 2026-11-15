@@ -1,9 +1,20 @@
 packages:
   - packages/*
 
-minimumReleaseAgeExclude:
-  - skills@1.8.1
-  - limina@0.5.0
+cleanupUnusedCatalogs: true
+dedupeInjectedDeps: false
+enablePrePostScripts: false
+engineStrict: true
+failIfNoMatch: true
+hoist: false
 
-allowBuilds:
-  esbuild@0.28.2: true
+loglevel: info
+minimumReleaseAge: 1440
+minimumReleaseAgeStrict: true
+nodeVersion: 24.15.0
+
+publishBranch: main
+sharedWorkspaceLockfile: true
+shellEmulator: true
+strictDepBuilds: true
+strictPeerDependencies: true

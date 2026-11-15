@@ -7,6 +7,6 @@
     "reports/**",
     "**/fixtures/**",
     "packages/*/assets/**",
-    "packages/*/skill/**"
+    "packages/*/skills/**"
   ]
 }

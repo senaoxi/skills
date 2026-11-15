@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "setup-other-home",
+  "category": "setup-authorization",
+  "prompt": "$mark setup",
+  "followUps": ["选择 Vercel", "Team Slug 是 remembered-team，Project ID 是 prj_Remembered123。"],
+  "context": {
+    "cwd": "/eval/workspace",
+    "home": "/eval/home",
+    "processEnvironment": { "AM_HOME": "/eval/home/mark-data" },
+    "environment": {
+      "node": { "available": true },
+      "browser": { "available": false },
+      "vercel": { "stub": true },
+      "deliveryMode": "uninitialized"
+    },
+    "history": "A previous Mark Setup successfully saved Vercel delivery at /eval/home/another-mark-data/delivery.md. Its team slug was remembered-team, project ID prj_Remembered123, and alias remembered.example.test.",
+    "instructions": [
+      "Stub project inspection for remembered-team and prj_Remembered123 as remembered-site. Return remembered.example.test and other.example.test as production aliases. Reject all publication calls."
+    ]
+  },
+  "fixtures": [],
+  "expected": {
+    "activation": true,
+    "artifact": "none",
+    "delivery": "chat",
+    "publishing": "forbidden",
+    "required": [
+      "After status, offer fresh delivery choices without a restore candidate.",
+      "After the user selects Vercel, ask for both fields. Once the user supplies them, check the project and offer its domains and the deployment URL option."
+    ],
+    "forbidden": [
+      "Use the other home's history as a restore candidate or input source. Save settings while the domain choice is open. Publish."
+    ],
+    "preservedData": []
+  },
+  "rubric": [
+    {
+      "id": "other-home-is-ineligible",
+      "severity": "must",
+      "criterion": "Turn one offers delivery modes and no restore candidate. Through turn two, there is no project check, domain lookup or save and delivery.md is absent."
+    },
+    {
+      "id": "matching-user-input-is-valid",
+      "severity": "must",
+      "criterion": "Turn three uses the independently supplied pair for --check-project and --list-domains even though the values match the other home's history."
+    },
+    {
+      "id": "unanswered-alias-waits",
+      "severity": "must",
+      "criterion": "The reply offers both production aliases and the deployment URL option, with no write or publication attempt. delivery.md stays absent."
+    }
+  ]
+}

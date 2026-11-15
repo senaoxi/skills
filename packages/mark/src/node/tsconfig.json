@@ -1,0 +1,14 @@
+{
+  "extends": "../../../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "types": ["node"]
+  },
+  "include": ["**/*.ts"],
+  "liminaOptions": {
+    "outputs": {
+      "rootDir": ".",
+      "outDir": "../../.build/src/node"
+    }
+  }
+}

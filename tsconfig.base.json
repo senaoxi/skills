@@ -6,6 +6,8 @@
     "moduleResolution": "NodeNext",
     "strict": true,
     "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "rewriteRelativeImportExtensions": true,
     "noEmit": true,
     "noEmitOnError": true,
     "allowJs": false,

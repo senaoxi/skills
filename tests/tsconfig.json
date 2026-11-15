@@ -3,7 +3,7 @@
   "compilerOptions": {
     "types": ["node"]
   },
-  "include": ["**/*.mts"],
+  "include": ["**/*.ts"],
   "liminaOptions": {
     "outputs": {
       "rootDir": ".",
