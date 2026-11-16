@@ -601,7 +601,7 @@ Git path: skills/make-bot-ui
 
 Workspace package: ./packages/mark
 Declared name: mark
-Input SHA-256: 42876d5ada06fdee3482cfb25fb8485eb619ee40ed2186e1ea6dbcf5fbde3351
+Input SHA-256: 4f792ad14820d564b12a1cb32a1705a4b0301926c72601d2764ee38f526e698c
 Toolchain: {"limina":"0.5.0","node":"^24.15.0 || >=26.0.0","pnpm":"pnpm@12.18.0","recipe":"skills-local-build-v2","rolldown":"1.3.2","typescript":"6.0.3","yaml":"2.9.1"}
 
 ### LICENSE
