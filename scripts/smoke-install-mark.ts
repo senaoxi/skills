@@ -7,11 +7,10 @@ import { installSkills, resolveSource } from "skills";
 const runnerTemp = process.env.RUNNER_TEMP;
 if (runnerTemp === undefined) throw new Error("RUNNER_TEMP is required.");
 const sourceDirectory = join(runnerTemp, "skills install source 空间");
-const extracted = spawnSync(
-  "tar",
-  ["-xzf", join(sourceDirectory, "mark.tar.gz"), "-C", sourceDirectory],
-  { encoding: "utf8" },
-);
+const extracted = spawnSync("tar", ["-xzf", "mark.tar.gz"], {
+  cwd: sourceDirectory,
+  encoding: "utf8",
+});
 assert.equal(extracted.status, 0, extracted.error?.message ?? extracted.stderr);
 const source = await resolveSource(join(sourceDirectory, "mark"), { config: { telemetry: false } });
 try {
