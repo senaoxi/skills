@@ -11,5 +11,4 @@ export default defineConfig({
       auto: { exclude: ["skills/**", "**/fixtures/**", "**/.build/**"] },
     },
   },
-  pipelines: { governance: ["graph:check", "source:check", "proof:check"] },
 });

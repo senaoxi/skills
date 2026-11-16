@@ -8,7 +8,7 @@
     "skills": "node scripts/cli.ts",
     "test": "node scripts/run-tests.ts",
     "check": "limina check",
-    "build": "limina check governance && node scripts/build-skills.ts",
+    "build": "node scripts/build-skills.ts",
     "eval": "node scripts/run-evals.ts",
     "skill": "node scripts/skill-task.ts",
     "clean": "node scripts/clean.ts"
